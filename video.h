@@ -38,7 +38,7 @@ public:
      * Desctructor
     */
     virtual ~Video(){
-        cout << "Video deleted" << endl;
+        //cout << "Video deleted" << endl;
     }
 };
 

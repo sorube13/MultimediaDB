@@ -52,7 +52,7 @@ public:
     virtual ~Film(){
         delete [] durees;
         durees = nullptr;
-        cout << "Film deleted" << endl;
+        //cout << "Film deleted" << endl;
     }
 };
 #endif // FILM_H

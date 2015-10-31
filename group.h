@@ -41,7 +41,7 @@ public:
     }
 
     virtual ~Group(){
-        cout << "Group deleted" << endl;
+        //cout << "Group deleted" << endl;
     }
 };
 

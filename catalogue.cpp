@@ -58,10 +58,14 @@ void Catalogue::supprimer(string p){
 }
 
 void Catalogue::rechercher(string p){
-    if(multimedia.find(p) != multimedia.end()){
-        multimedia[p]->affichage(cout);
+    auto it = multimedia.find(p);
+    if(it != multimedia.end()){
+        cout << "Found MM: " << p << endl;
+        cout << (it->second)->getName() << endl;
+        //multimedia[p]->affichage(cout);
     }else if(groups.find(p) != groups.end()){
-       groups[p]->affichage(cout);
+       //groups[p]->affichage(cout);
+        cout << "Found group" << endl;
     }else{
         cout << "Not Found" << endl;
     }

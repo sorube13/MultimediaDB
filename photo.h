@@ -41,7 +41,7 @@ public:
      * Desctructor
     */
     virtual ~Photo(){
-        cout << "Photo deleted" << endl;
+        //cout << "Photo deleted" << endl;
     }
 };
 
