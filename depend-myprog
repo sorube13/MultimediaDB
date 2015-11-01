@@ -1,3 +1,4 @@
 base.o: base.cpp base.h
-main.o: main.cpp base.h photo.h video.h film.h group.h catalogue.cpp \
- catalogue.h
+main.o: main.cpp base.h photo.h video.h film.h group.h catalogue.h
+catalogue.o: catalogue.cpp catalogue.h base.h group.h photo.h video.h \
+ film.h

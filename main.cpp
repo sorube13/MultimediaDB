@@ -3,7 +3,7 @@
 #include "video.h"
 #include "film.h"
 #include "group.h"
-#include "catalogue.cpp"
+#include "catalogue.h"
 #include <memory>
 
 
@@ -19,13 +19,13 @@ int main() {
 //    /*
 //     * Create new Photo and set attributes. Print on console result
 //    */
-//    shared_ptr<Photo> p(new Photo());
-//    p->setName("disney.jpg");
-//    p->setPathname("/cal/homes/sorube/Desktop/disney.jpg");
-//    p->setLatitude(10.0);
-//    p->setLongitude(15.0);
-//    //p->affichage(cout);
-//    //p->openObject();
+    shared_ptr<Photo> p(new Photo());
+    p->setName("disney.jpeg");
+    p->setPathname("/home/sorube/Pictures/disney.jpeg");
+    p->setLatitude(10.0);
+    p->setLongitude(15.0);
+    p->affichage(cout);
+    p->openObject();
 
 //    /*
 //     * Create new Video and set attributes. Print on console result
@@ -89,17 +89,18 @@ int main() {
 
     shared_ptr<Catalogue> c(new Catalogue());
     //Catalogue * c = new Catalogue();
-    c->createPhoto("Photo 1", "/sorube/photo", 1.23, 2.34);
+    c->createPhoto("Photo 1.jpeg", "/home/sorube/Pictures/Photo 1.jpeg", 1.23, 2.34);
     c->createVideo("video 1", "/sorube/video", 120);
     unsigned int d [] = { 5 , 2 , 3 };
     unsigned int num = 3;
     c->createFilm("film", "/sorube/film", 100, d,num);
     c->createGroup("Disney");
     c->rechercher("jeje");
-    c->rechercher("Photo 1");
-//    c->rechercher("Disney");
-    c->supprimer("Photo 1");
-    c->supprimer("Disney");
+    c->rechercher("Photo 1.jpeg");
+    c->rechercher("Disney");
+    c->jouer("Photo 1.jpeg");
+    //c->supprimer("Photo 1");
+    //c->supprimer("Disney");
     //c->addToGroup("Photo 1", "Disney");
 
 

@@ -3,6 +3,9 @@
 
 #include <map>
 #include <string>
+#include "base.h"
+#include "group.h"
+#include <memory>
 
 using namespace std;
 
@@ -10,8 +13,10 @@ class Catalogue
 {
 
 private:
-    map<string,Base*> multimedia;
-    map<string,Group*> groups;
+    map<string,shared_ptr<Base>> multimedia;
+    map<string,shared_ptr<Group>> groups;
+    //map<string, Base*> multimedia;
+    //map<string, Group*> groups;
 
 public:
     Catalogue();
@@ -22,6 +27,7 @@ public:
 //    virtual void addToGroup(string m, string g);
     virtual void supprimer(string p);
     virtual void rechercher(string p);
+    virtual void jouer(string p);
     virtual ~Catalogue();
 };
 

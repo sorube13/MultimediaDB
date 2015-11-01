@@ -36,7 +36,7 @@ public:
                 (*it)->affichage(s);
             }
         } else{
-            s << "Group is empty" << endl;
+            s << getGroupName()<< " group is empty" << endl;
         }
     }
 

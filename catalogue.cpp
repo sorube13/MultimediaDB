@@ -11,25 +11,24 @@ Catalogue::Catalogue(){}
 
 void Catalogue::createPhoto(string n, string pathname, double lat, double lon){
     shared_ptr<Photo> p(new Photo(n, pathname, lat, lon));
-    multimedia[n] = p.get();
-    multimedia[n]->affichage(cout);
+    multimedia[n] = p;
 }
 
 void Catalogue::createVideo(string n, string pathname, int duree){
     shared_ptr<Video> v(new Video(n, pathname, duree));
-    multimedia[n] = v.get();
+    multimedia[n] = v;
 }
 
 void Catalogue::createFilm(string n, string pathname, int duree, unsigned int *tab, unsigned int num){
     shared_ptr<Film> f(new Film(n, pathname, duree));
     f.get()->setDurees(tab, num);
-    multimedia[n] = f.get();
+    multimedia[n] = f;
 
 }
 
 void Catalogue::createGroup(string n){
     shared_ptr<Group> g(new Group(n));
-    groups[n] = g.get();
+    groups[n] = g;
 }
 
 //void Catalogue::addToGroup(string m, string g){
@@ -58,14 +57,24 @@ void Catalogue::supprimer(string p){
 }
 
 void Catalogue::rechercher(string p){
-    auto it = multimedia.find(p);
-    if(it != multimedia.end()){
-        cout << "Found MM: " << p << endl;
-        cout << (it->second)->getName() << endl;
-        //multimedia[p]->affichage(cout);
+    if(multimedia.find(p) != multimedia.end()){
+        map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
+        cout << "Multimedia search result: " << endl;
+        (m->second)->affichage(cout);
     }else if(groups.find(p) != groups.end()){
-       //groups[p]->affichage(cout);
-        cout << "Found group" << endl;
+        map<string, shared_ptr<Group> >::const_iterator m = this->groups.find(p);
+        cout << "Group search result: " << endl;
+        (m->second)->affichage(cout);
+    }else{
+        cout << "Not Found" << endl;
+    }
+}
+
+void Catalogue::jouer(string p){
+    if(multimedia.find(p) != multimedia.end()){
+        map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
+        cout << "Opening "<< p << endl;
+        (m->second)->openObject();
     }else{
         cout << "Not Found" << endl;
     }
