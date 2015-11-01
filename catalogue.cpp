@@ -32,27 +32,29 @@ void Catalogue::createGroup(string n){
 }
 
 //void Catalogue::addToGroup(string m, string g){
-//    groups[g]->push_back(multimedia[m]);
-
-//    cout << "ADDED TO GROUP" << endl;
+//    //if((multimedia.find(m) != multimedia.end()) && (groups.find(g)!= groups.end())){
+//        map<string, shared_ptr<Base> >::const_iterator itm = this->multimedia.find(m);
+//        map<string, shared_ptr<Group> >::const_iterator itg = this->groups.find(g);
+//        (itg->second)->push_back((itm->second).get());
+//        cout << "ADDED Multimedia to group " << endl;
+//    }else{
+//        cout << "Unable to add to group" << endl;
+//    }
 //}
 
 void Catalogue::supprimer(string p){
     if(multimedia.find(p) != multimedia.end()){
-       multimedia.erase(p);
-       //cout << "Deleted multimedia" << endl;
-//       for (map<string,Group*>::iterator it=groups.begin(); it!=groups.end(); ++it){
-//           for (list<Base*>::const_iterator lit = (*it)->begin(); lit != (*it)->end(); lit++){
-//               if((*lit)->getName() == p){
-//                   (*it)->remove(p);
-//                   cout << "Deleted multimedia" << endl;
-//               }
-//           }
-//       }
-    }
-    else if(groups.find(p) != groups.end()){
+        map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
+        for (map<string, shared_ptr<Group> >::const_iterator it = this->groups.begin(); it != this->groups.end(); ++it){
+            (it->second)->remove((m->second).get());
+        }
+        this->multimedia.erase(p);
+        cout << "Deleted Multimedia: "<< p << endl;
+    }else if(groups.find(p) != groups.end()){
         groups.erase(p);
-        cout << "Deleted Group" << endl;
+        cout << "Deleted Group: " << p << endl;
+    }else{
+        cout << p << " Not Found" << endl;
     }
 }
 
@@ -66,7 +68,7 @@ void Catalogue::rechercher(string p){
         cout << "Group search result: " << endl;
         (m->second)->affichage(cout);
     }else{
-        cout << "Not Found" << endl;
+        cout << p << " Not Found" << endl;
     }
 }
 
