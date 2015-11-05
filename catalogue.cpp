@@ -4,6 +4,8 @@
 #include "film.h"
 #include "group.h"
 #include <memory>
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -83,6 +85,42 @@ void Catalogue::jouer(string p){
     }else{
         cout << "Not Found" << endl;
     }
+}
+
+
+bool Catalogue::save(const string &fileName) {
+    ofstream f;
+    f.open(fileName); // f(fileName.c_str()) avant C++11
+    if (!f) {
+        cerr << "Can't open file " << fileName << endl;
+        return false;
+    }
+    // seulement avec C++11, sinon utiliser forme usuelle avec begin()/end()
+    for (map<string, shared_ptr<Base> >::const_iterator it = this->multimedia.begin(); it != this->multimedia.end(); ++it){
+        (it->second)->write(f);
+    }
+    f.close();
+    return true;
+}
+
+bool Catalogue::load(const string &fileName){
+    ifstream f;
+    f.open(fileName);
+    if(!f){
+        cerr << "Can't open file " << fileName << endl;
+        return false;
+    }
+    while(f.good()){
+        shared_ptr<Base> b(new Base());
+        b->read(f);
+        if(f.fail()){
+            cerr << "Read error in " << fileName << endl;
+            b.reset();
+            return false;
+        }
+        else multimedia[b->getName()] = b;
+    }
+    return true;
 }
 
 Catalogue::~Catalogue(){

@@ -53,6 +53,7 @@ public:
 
     if(method == "rechercher" || method =="1"){
         response = c->rechercher(args, cout);
+
     }else if(method=="jouer" || method =="2"){
         response = "Multimedia being played in server";
         c->jouer(args);

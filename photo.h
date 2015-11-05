@@ -29,7 +29,7 @@ public:
      * Opens multimedia object
     */
     virtual void openObject(){
-        string s = "imagej "+ getPathname() + " &";
+        string s = "imagej "+ getPathname();
         system(s.c_str());
     }
 

@@ -28,6 +28,8 @@ public:
     virtual void supprimer(string p);
     virtual string rechercher(string p, ostream & s);
     virtual void jouer(string p);
+    bool save(const string & fileName);
+    bool load(const string & fileName);
     virtual ~Catalogue();
 };
 

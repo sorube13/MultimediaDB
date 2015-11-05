@@ -115,7 +115,8 @@ int main() {
         cout << "este es el resultado GUAY " << msg << endl;
         c->rechercher("video1", cout);
         c->rechercher("disney.jpg", cout);
-        c->jouer("disney.jpg");
+        //c->jouer("disney.jpg");
+        c->save("/cal/homes/sorube/Desktop/hello.html");
         c->supprimer("Photo 1.jpeg");
         c->supprimer("jejej");
         c->supprimer("Disney");
