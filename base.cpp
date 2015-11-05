@@ -51,8 +51,10 @@ void Base::openObject(){}
  * Method affichage
  * Prints name and pathname
 */
-void Base::affichage(ostream & s){
-    s << getName() << " "<< getPathname() << endl;
+string Base::affichage(ostream & s){
+    string msg = getName() + " " + getPathname();
+    s << msg << endl;
+    return msg;
 }
 
 /*

@@ -22,8 +22,8 @@ int main() {
         * Create new Photo and set attributes. Print on console result
         */
         shared_ptr<Photo> p(new Photo());
-        p->setName("disney.jpeg");
-        p->setPathname("/home/sorube/Pictures/disney.jpeg");
+        p->setName("disney.jpg");
+        p->setPathname("/cal/homes/sorube/Desktop/disney.jpg");
         p->setLatitude(10.0);
         p->setLongitude(15.0);
         p->affichage(cout);
@@ -47,33 +47,35 @@ int main() {
             tableau[i]->affichage(cout);
         }
 
-        shared_ptr<Film> f(new Film());
-        f->setName("sample_video.mp4");
-        f->setPathname("/cal/homes/sorube/Desktop/sample_video.mp4");
-        f->setDuree(5);
-        unsigned int d [] = { 5 , 2 , 3 };
-        unsigned int num = 3;
-        f->setDurees(d, num);
-        f->affichage(cout);
+        if(0){
+            shared_ptr<Film> f(new Film());
+            f->setName("sample_video.mp4");
+            f->setPathname("/cal/homes/sorube/Desktop/sample_video.mp4");
+            f->setDuree(5);
+            unsigned int d [] = { 5 , 2 , 3 };
+            unsigned int num = 3;
+            f->setDurees(d, num);
+            f->affichage(cout);
 
-        shared_ptr<Group> g(new Group("My Memories"));
-        g->push_back(f.get());
-        g->push_back(v.get());
-        g->push_back(p.get());
-        g->push_back(f.get());
-        g->affichage(cout);
+            shared_ptr<Group> g(new Group("My Memories"));
+            g->push_back(f.get());
+            g->push_back(v.get());
+            g->push_back(p.get());
+            g->push_back(f.get());
+            g->affichage(cout);
 
-        g.reset();
+            g.reset();
 
-        //delete g;
+            //delete g;
 
 
-        shared_ptr<Group> g1(new Group("Photos"));
-        g1->push_back(p.get());
-        g1->affichage(cout);
+            shared_ptr<Group> g1(new Group("Photos"));
+            g1->push_back(p.get());
+            g1->affichage(cout);
 
-        g1.reset();
-        //delete g1;
+            g1.reset();
+            //delete g1;
+        }
 
 
 
@@ -87,10 +89,10 @@ int main() {
         b.reset();
         p.reset();
         v.reset();
-        f.reset();
+        //f.reset();
     }
 
-    if(1){
+    if(0){
         shared_ptr<Photo> p(new Photo());
         p->setName("disney.jpg");
         p->setPathname("/cal/homes/sorube/Desktop/disney.jpg");
@@ -100,22 +102,25 @@ int main() {
         p->openObject();
     }
 
-    if(0){
+    if(1){
         shared_ptr<Catalogue> c(new Catalogue());
         c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
-        c->createVideo("video 1", "/sorube/video", 120);
+        c->createVideo("video1", "/sorube/video", 120);
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
-        c->createGroup("Disney");
-        c->rechercher("jeje");
-        c->rechercher("Photo 1.jpeg");
-        c->rechercher("Disney");
+        //c->createGroup("Disney");
+        string msg;
+        msg = c->rechercher("jeje", cout);
+        cout << "este es el resultado GUAY " << msg << endl;
+        c->rechercher("video1", cout);
+        c->rechercher("disney.jpg", cout);
         c->jouer("disney.jpg");
         c->supprimer("Photo 1.jpeg");
         c->supprimer("jejej");
         c->supprimer("Disney");
     }
+
 
 
 

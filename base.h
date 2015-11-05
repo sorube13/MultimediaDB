@@ -19,7 +19,7 @@ public:
     virtual string getName() const;
     virtual string getPathname() const;
     virtual void openObject();
-    virtual void affichage(ostream & s);
+    virtual string affichage(ostream & s);
     virtual ~Base();
 };
 

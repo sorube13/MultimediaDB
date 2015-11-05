@@ -35,11 +35,12 @@ public:
     }
 
 
-    virtual void affichage(ostream & s) override {
+    virtual string affichage(ostream & s) override {
         s << "NOM: "<< getName() << " PATH:  "<< getPathname() << " DUREE: "<< getDuree() << " DUREES POINTER: " << getDurees() << endl;
         for(unsigned int i = 0; i< count; i++){
             s<< "Chapitre " << i+1 << ": " <<  durees[i]<<endl;
         }
+        return "hola";
     }
 
     /*

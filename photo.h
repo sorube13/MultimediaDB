@@ -29,14 +29,18 @@ public:
      * Opens multimedia object
     */
     virtual void openObject(){
-        string s = "imagej "+ getPathname();
+        string s = "imagej "+ getPathname() + " &";
         system(s.c_str());
     }
 
     /*
      * Print Photo attributes
     */
-    virtual void affichage(ostream & s) override {s << getName() << " "<< getPathname() << " " << getLatitude() << " " << getLongitude() << endl;}
+    virtual string affichage(ostream & s) override {
+        string msg = getName() + " "+ getPathname() + " " + to_string(getLatitude()) + " " + to_string(getLongitude());
+        s << msg << endl;
+        return msg;
+    }
     /*
      * Desctructor
     */

@@ -58,17 +58,20 @@ void Catalogue::supprimer(string p){
     }
 }
 
-void Catalogue::rechercher(string p, ostream & s){
+string Catalogue::rechercher(string p, ostream & s){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
         cout << "Multimedia search result: " << endl;
-        (m->second)->affichage(s);
+        string resp = (m->second)->affichage(s);
+        return resp;
     }else if(groups.find(p) != groups.end()){
         map<string, shared_ptr<Group> >::const_iterator m = this->groups.find(p);
         cout << "Group search result: " << endl;
         (m->second)->affichage(s);
+        return "HELLO";
     }else{
         cout << p << " Not Found" << endl;
+        return "Not Found";
     }
 }
 

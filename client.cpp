@@ -42,6 +42,9 @@ int main(int argc, char* argv[]) {
   }
   
   cout << "Client connected to "<< host<<":"<<port << endl;
+  cout << "Please choose from the following methods: " << endl;
+  cout << "     (1) rechercher + [multimedia_name]" << endl;
+  cout << "     (2) jouer + [multimedia_name] " << endl;
   
   while (cin.good()) {
     cout << "Request: ";

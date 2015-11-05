@@ -45,19 +45,17 @@ public:
     unsigned int num = 3;
     c->createFilm("film", "/sorube/film", 100, d,num);
 
-
     stringstream r;
     string method, args;
 
     r<<request;
     r >> method >> args;
 
-    if(method == "rechercher"){
-        c->rechercher(args, cout);
-        response = "DONE RECHERCHE";
-    }else if(method=="jouer"){
+    if(method == "rechercher" || method =="1"){
+        response = c->rechercher(args, cout);
+    }else if(method=="jouer" || method =="2"){
+        response = "Multimedia being played in server";
         c->jouer(args);
-        response = "DONE JOUER";
     }else{
         response = "NOT FOUND";
     }
