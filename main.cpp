@@ -5,6 +5,7 @@
 #include "group.h"
 #include "catalogue.h"
 #include <memory>
+#include <string>
 
 
 int main() {
@@ -90,8 +91,18 @@ int main() {
     }
 
     if(1){
+        shared_ptr<Photo> p(new Photo());
+        p->setName("disney.jpg");
+        p->setPathname("/cal/homes/sorube/Desktop/disney.jpg");
+        p->setLatitude(10.0);
+        p->setLongitude(15.0);
+        p->affichage(cout);
+        p->openObject();
+    }
+
+    if(0){
         shared_ptr<Catalogue> c(new Catalogue());
-        c->createPhoto("Photo 1.jpeg", "/home/sorube/Pictures/Photo 1.jpeg", 1.23, 2.34);
+        c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createVideo("video 1", "/sorube/video", 120);
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
@@ -100,7 +111,7 @@ int main() {
         c->rechercher("jeje");
         c->rechercher("Photo 1.jpeg");
         c->rechercher("Disney");
-        c->jouer("Photo 1.jpeg");
+        c->jouer("disney.jpg");
         c->supprimer("Photo 1.jpeg");
         c->supprimer("jejej");
         c->supprimer("Disney");

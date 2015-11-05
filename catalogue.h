@@ -26,7 +26,7 @@ public:
     virtual void createGroup(string n);
     //virtual void addToGroup(string m, string g);
     virtual void supprimer(string p);
-    virtual void rechercher(string p);
+    virtual void rechercher(string p, ostream & s);
     virtual void jouer(string p);
     virtual ~Catalogue();
 };
