@@ -52,7 +52,7 @@ void Base::openObject(){}
  * Prints name and pathname
 */
 string Base::affichage(ostream & s){
-    string msg = getName() + " " + getPathname();
+    string msg = "Base\n"+getName() + " " + getPathname();
     s << msg << endl;
     return msg;
 }

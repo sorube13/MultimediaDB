@@ -37,7 +37,7 @@ public:
      * Print Photo attributes
     */
     virtual string affichage(ostream & s) override {
-        string msg = getName() + " "+ getPathname() + " " + to_string(getLatitude()) + " " + to_string(getLongitude());
+        string msg = "Photo\n" + getName() + " "+ getPathname() + " " + to_string(getLatitude()) + " " + to_string(getLongitude());
         s << msg << endl;
         return msg;
     }

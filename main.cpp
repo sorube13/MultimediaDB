@@ -9,7 +9,7 @@
 
 
 int main() {
-    if(0){
+    if(1){
         /*
          * Create new base and set attributes. Print on console result
         */
@@ -102,7 +102,7 @@ int main() {
         p->openObject();
     }
 
-    if(1){
+    if(0){
         shared_ptr<Catalogue> c(new Catalogue());
         c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createVideo("video1", "/sorube/video", 120);
@@ -120,6 +120,7 @@ int main() {
         c->supprimer("Photo 1.jpeg");
         c->supprimer("jejej");
         c->supprimer("Disney");
+
     }
 
 

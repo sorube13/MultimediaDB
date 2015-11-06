@@ -34,7 +34,7 @@ public:
      * Print Video attributes
     */
     virtual string affichage(ostream & s) override {
-        string msg = getName() + " "+ getPathname() + " "+ to_string(getDuree());
+        string msg = "Video\n" + getName() + " "+ getPathname() + " "+ to_string(getDuree());
         s << msg << endl;
         return msg;
     }
