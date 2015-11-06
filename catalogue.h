@@ -24,13 +24,15 @@ public:
     virtual void createVideo(string n, string pathname, int duree);
     virtual void createFilm(string n, string pathname, int duree, unsigned int *tab, unsigned int num);
     virtual void createGroup(string n);
-    //virtual void addToGroup(string m, string g);
-    virtual void supprimer(string p);
-    virtual string rechercher(string p, ostream & s);
+    virtual void supprimerMultimedia(string p);
+    virtual void supprimerGroup(string p);
+    virtual string rechercherMultimedia(string p, ostream & s);
+    virtual string rechercherGroup(string p, ostream & s);
     virtual void jouer(string p);
     bool save(const string & fileName);
     bool load(const string & fileName);
     virtual ~Catalogue();
 };
+
 
 #endif // CATALOGUE_H

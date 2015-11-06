@@ -7,45 +7,145 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <exception>
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
 
+/**
+ * @brief Catalogue::Catalogue
+ */
 Catalogue::Catalogue(){}
 
+
+/**
+  * Exception InvalidCaracters that will be launched if there are any special characters
+ **/
+class InvalidCaracters: public exception
+{
+    const char* what() const noexcept {return "Incorrect characters\n";}
+};
+
+/**
+ * @brief HasSpecialCharacters
+ * @param str
+ * @return 0 if str does not have special characters or 1 if it does
+ */
+bool HasSpecialCharacters(const char *str)
+{
+    return str[strspn(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-:")] != 0;
+}
+
+/**
+ * @brief Catalogue::createPhoto
+ * @param n
+ * @param pathname
+ * @param lat
+ * @param lon
+ * Creates a new photo with smart pointers
+ * Checks if there are other objects with the same name and shows error message
+ * Checks for invalid characters
+ */
 void Catalogue::createPhoto(string n, string pathname, double lat, double lon){
-    shared_ptr<Photo> p(new Photo(n, pathname, lat, lon));
-    multimedia[n] = p;
+    try{
+        if(multimedia[n]){
+            cerr << "A photo with the name: " << n <<" already exists" << endl;
+        }else if(HasSpecialCharacters(n.c_str())==1) throw InvalidCaracters();
+
+        else{
+            shared_ptr<Photo> p(new Photo(n, pathname, lat, lon));
+            multimedia[n] = p;
+        }
+    }catch(exception& e){
+        cerr<< e.what() << endl;
+    }
 }
 
+/**
+ * @brief Catalogue::createVideo
+ * @param n
+ * @param pathname
+ * @param duree
+ * Creates a new video with smart pointers
+ * Checks if there are other objects with the same name and shows error message
+ * Checks for invalid characters
+ */
 void Catalogue::createVideo(string n, string pathname, int duree){
-    shared_ptr<Video> v(new Video(n, pathname, duree));
-    multimedia[n] = v;
+    try{
+        if(multimedia[n]){
+            cerr << "A video with the name " << n <<" already exists" << endl;
+        }else if(HasSpecialCharacters(n.c_str())==1) throw InvalidCaracters();
+
+        else{
+            shared_ptr<Video> v(new Video(n, pathname, duree));
+            multimedia[n] = v;
+        }
+    }catch(exception& e){
+        cerr<< e.what() << endl;
+    }
 }
 
+/**
+ * @brief Catalogue::createFilm
+ * @param n
+ * @param pathname
+ * @param duree
+ * @param tab
+ * @param num
+ * Creates a new film with smart pointers
+ * Checks if there are other objects with the same name and shows error message
+ * Checks if the durees is zero or less and shows error message
+ * Checks for invalid characters
+ */
 void Catalogue::createFilm(string n, string pathname, int duree, unsigned int *tab, unsigned int num){
-    shared_ptr<Film> f(new Film(n, pathname, duree));
-    f.get()->setDurees(tab, num);
-    multimedia[n] = f;
+    try{
+        if(multimedia[n]){
+            cerr << "A film with the name " << n << " already exists" << endl;
+        }else if((sizeof(tab) <= 0) || (num<=0)){
+            cerr << "Incorrect film initialization of chapters for film: "<< n << endl;
+        }
+        else if (HasSpecialCharacters(n.c_str())==1) throw InvalidCaracters();
 
+        else{
+            shared_ptr<Film> f(new Film(n, pathname, duree));
+            f.get()->setDurees(tab, num);
+            multimedia[n] = f;
+        }
+    }catch(exception& e){
+        cerr<< e.what() << endl;
+    }
 }
+
+/**
+ * @brief Catalogue::createGroup
+ * @param n
+ * Creates a new group with smart pointers
+ * Checks if there are other objects with the same name and shows error message
+ * Checks for invalid characters
+ */
 
 void Catalogue::createGroup(string n){
-    shared_ptr<Group> g(new Group(n));
-    groups[n] = g;
+    try{
+        if(groups[n]){
+            cerr << "A Group with the name " << n << " already exists" << endl;
+        }
+        else if(HasSpecialCharacters(n.c_str())==1) throw InvalidCaracters();
+        else{
+            shared_ptr<Group> g(new Group(n));
+            groups[n] = g;
+        }
+    }catch(exception& e){
+        cerr<< e.what() << endl;
+    }
 }
 
-//void Catalogue::addToGroup(string m, string g){
-//    //if((multimedia.find(m) != multimedia.end()) && (groups.find(g)!= groups.end())){
-//        map<string, shared_ptr<Base> >::const_iterator itm = this->multimedia.find(m);
-//        map<string, shared_ptr<Group> >::const_iterator itg = this->groups.find(g);
-//        (itg->second)->push_back((itm->second).get());
-//        cout << "ADDED Multimedia to group " << endl;
-//    }else{
-//        cout << "Unable to add to group" << endl;
-//    }
-//}
-
-void Catalogue::supprimer(string p){
+/**
+ * @brief Catalogue::supprimerMultimedia
+ * @param p
+ * Shows error if Multimedia not found
+ */
+void Catalogue::supprimerMultimedia(string p){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
         for (map<string, shared_ptr<Group> >::const_iterator it = this->groups.begin(); it != this->groups.end(); ++it){
@@ -53,50 +153,91 @@ void Catalogue::supprimer(string p){
         }
         this->multimedia.erase(p);
         cout << "Deleted Multimedia: "<< p << endl;
-    }else if(groups.find(p) != groups.end()){
-        groups.erase(p);
-        cout << "Deleted Group: " << p << endl;
     }else{
-        cout << p << " Not Found" << endl;
+        cerr << p << " Not Found" << endl;
     }
 }
 
-string Catalogue::rechercher(string p, ostream & s){
+/**
+ * @brief Catalogue::supprimerGroup
+ * @param p
+ * Shows error if Group not found
+ */
+void Catalogue::supprimerGroup(string p){
+    if(groups.find(p) != groups.end()){
+        groups.erase(p);
+        cout << "Deleted Group: " << p << endl;
+    }else{
+        cerr << p << " Not Found" << endl;
+    }
+}
+
+/**
+ * @brief Catalogue::rechercherMultimedia
+ * @param p
+ * @param s
+ * @return attributes of multimedia[p]
+ * Shows error if multimedia not found
+ */
+string Catalogue::rechercherMultimedia(string p, ostream & s){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
         cout << "Multimedia search result: " << endl;
         string resp = (m->second)->affichage(s);
         return resp;
-    }else if(groups.find(p) != groups.end()){
-        map<string, shared_ptr<Group> >::const_iterator m = this->groups.find(p);
-        cout << "Group search result: " << endl;
-        (m->second)->affichage(s);
-        return "HELLO";
     }else{
-        cout << p << " Not Found" << endl;
+        cerr << p << " Not Found" << endl;
         return "Not Found";
     }
 }
 
+/**
+ * @brief Catalogue::rechercherGroup
+ * @param p
+ * @param s
+ * @return attributes of Group[p]
+ * Shows error if group not found
+ */
+string Catalogue::rechercherGroup(string p, ostream &s){
+    if(groups.find(p) != groups.end()){
+        map<string, shared_ptr<Group> >::const_iterator m = this->groups.find(p);
+        cout << "Group search result: " << endl;
+        string resp = (m->second)->affichage(s);
+        return resp;
+    }else{
+        cerr << p << "Not Found" << endl;
+        return "Not Found";
+    }
+}
+
+/**
+ * @brief Catalogue::jouer
+ * @param p
+ */
 void Catalogue::jouer(string p){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
         cout << "Opening "<< p << endl;
         (m->second)->openObject();
     }else{
-        cout << "Not Found" << endl;
+        cerr << "Not Found" << endl;
     }
 }
 
 
+/**
+ * @brief Catalogue::save
+ * @param fileName
+ * @return true if file saved successfully
+ * Otherwise return false and error message
+ */
 bool Catalogue::save(const string &fileName) {
     ofstream f;
-    f.open(fileName); // f(fileName.c_str()) avant C++11
+    f.open(fileName);
     if (!f) {
         cerr << "Can't open file " << fileName << endl;
         return false;
     }
-    // seulement avec C++11, sinon utiliser forme usuelle avec begin()/end()
     for (map<string, shared_ptr<Base> >::const_iterator it = this->multimedia.begin(); it != this->multimedia.end(); ++it){
         (it->second)->affichage(f);
     }
@@ -104,6 +245,12 @@ bool Catalogue::save(const string &fileName) {
     return true;
 }
 
+/**
+ * @brief Catalogue::load
+ * @param fileName
+ * @return true if file loaded successfuly
+ * Error message if file not available
+ */
 bool Catalogue::load(const string &fileName){
     ifstream f;
     string type;
@@ -146,7 +293,7 @@ bool Catalogue::load(const string &fileName){
             args << arg;
             args >> name >> pathname >> duree >> count;
             unsigned int d [count] = {};
-            for(int i=0; i<count; i++){
+            for(unsigned int i=0; i<count; i++){
                 stringstream mem;
                 unsigned int mem2;
                 string mem1;
@@ -166,8 +313,12 @@ bool Catalogue::load(const string &fileName){
     return true;
 }
 
+/**
+ * @brief Catalogue::~Catalogue
+ */
 Catalogue::~Catalogue(){
     cout << "Catalogue deleted" << endl;
 }
+
 
 

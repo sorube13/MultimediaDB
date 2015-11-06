@@ -13,33 +13,56 @@ private:
 
 
 public:
-    /*
-     * Constructor
-    */
+    /**
+     * @brief Group
+     */
     Group() {}
+    /**
+     * @brief Group
+     * @param name
+     */
     Group(string name){
         this->name = name;
     }
 
+    /**
+     * @brief setName
+     * @param n
+     */
     virtual void setName(string n){
         name = n;
     }
 
+    /**
+     * @brief getGroupName
+     * @return group name
+     */
     virtual string getGroupName(){
         return name;
     }
 
-    virtual void affichage(ostream & s) {
+    /**
+     * @brief affichage
+     * @param s
+     * @return attributes of group
+     */
+    virtual string affichage(ostream & s) {
+        string msg;
         if(!this->empty()){
-            s << "Group: " << getGroupName() << endl;
+            msg = "Group: " + getGroupName();
             for (list<Base*>::const_iterator it = this->begin(); it != this->end(); it++){
-                (*it)->affichage(s);
+                msg += "\n" + (*it)->affichage(s);
             }
         } else{
-            s << getGroupName()<< " group is empty" << endl;
+            msg = getGroupName() + " is empty";
         }
+        s << msg << endl;
+        return msg;
     }
 
+    /**
+     * @brief ~Group
+     */
     virtual ~Group(){
         //cout << "Group deleted" << endl;
     }

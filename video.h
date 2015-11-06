@@ -11,36 +11,52 @@ class Video : public Base
 private:
     int duree;
 public:
-    /*
-     * Constructor
-    */
+    /**
+     * @brief Video
+     */
     Video() {}
+    /**
+     * @brief Video
+     * @param name
+     * @param pathname
+     * @param duree
+     */
     Video(string name, string pathname, int duree) : Base(name, pathname), duree(duree){}
-    /*
-     * Setters and Getters
-    */
+
+    /**
+     * @brief setDuree
+     * @param d
+     */
     virtual void setDuree(int d){duree = d ; }
+
+    /**
+     * @brief getDuree
+     * @return duration of video
+     */
     virtual int getDuree() const { return duree; }
 
-    /*
-     * Opens multimedia object
-    */
+    /**
+     * @brief openObject
+     * Plays video using mpv
+     */
     virtual void openObject(){
         string s = "mpv "+ getPathname() ;
         system(s.c_str());
     }
 
-    /*
-     * Print Video attributes
-    */
+    /**
+     * @brief affichage
+     * @param s
+     * @return attributes of video
+     */
     virtual string affichage(ostream & s) override {
         string msg = "Video\n" + getName() + " "+ getPathname() + " "+ to_string(getDuree());
         s << msg << endl;
         return msg;
     }
-    /*
-     * Desctructor
-    */
+    /**
+     * @brief ~Video
+     */
     virtual ~Video(){
         //cout << "Video deleted" << endl;
     }

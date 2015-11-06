@@ -102,23 +102,26 @@ int main() {
         p->openObject();
     }
 
-    if(0){
+    if(1){
         shared_ptr<Catalogue> c(new Catalogue());
+        c->createPhoto("dis¡ney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createVideo("video1", "/sorube/video", 120);
-        unsigned int d [] = { 5 , 2 , 3 };
+        unsigned int d [] = {5, 2, 3};
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
+        cout << "1. created all" <<endl;
         c->createGroup("Disney");
-        string msg;
-        msg = c->rechercher("jeje", cout);
-        cout << "este es el resultado GUAY " << msg << endl;
-        c->rechercher("video1", cout);
-        c->rechercher("disney.jpg", cout);
-        c->jouer("disney.jpg");
-        c->supprimer("Photo 1.jpeg");
-        c->supprimer("jejej");
-        c->supprimer("Disney");
+        c->createGroup("Disney");
+        cout << "double disney group" << endl;
+        c->rechercherMultimedia("jeje", cout);
+        c->rechercherMultimedia("video1", cout);
+        c->rechercherMultimedia("disney.jpg", cout);
+        //c->jouer("disney.jpg");
+        c->supprimerMultimedia("Photo 1.jpeg");
+        c->supprimerMultimedia("jejej");
+        c->supprimerGroup("Disney");
+        c->supprimerGroup("tralala");
 
     }
 
@@ -127,22 +130,22 @@ int main() {
         c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createVideo("sample_video.mp4", "/cal/homes/sorube/Desktop/sample_video.mp4", 5);
         c->save("/cal/homes/sorube/Desktop/hello.html");
-        c->supprimer("sample_video.mp4");
-        c->supprimer("disney.jpg");
+        c->supprimerMultimedia("sample_video.mp4");
+        c->supprimerMultimedia("disney.jpg");
         c->load("/cal/homes/sorube/Desktop/hello.html");
-        c->rechercher("sample_video.mp4", cout);
-        c->rechercher("disney.jpg", cout);
+        c->rechercherMultimedia("sample_video.mp4", cout);
+        c->rechercherMultimedia("disney.jpg", cout);
     }
 
-    if(1){
+    if(0){
         shared_ptr<Catalogue> c(new Catalogue());
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
         c->save("/cal/homes/sorube/Desktop/hello.html");
-        c->supprimer("film");
+        c->supprimerMultimedia("film");
         c->load("/cal/homes/sorube/Desktop/hello.html");
-        c->rechercher("film", cout);
+        c->rechercherMultimedia("film", cout);
     }
 
 
