@@ -6,6 +6,7 @@
 #include <memory>
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -103,25 +104,67 @@ bool Catalogue::save(const string &fileName) {
     return true;
 }
 
-//bool Catalogue::load(const string &fileName){
-//    ifstream f;
-//    f.open(fileName);
-//    if(!f){
-//        cerr << "Can't open file " << fileName << endl;
-//        return false;
-//    }
-//    while(f.good()){
-//        shared_ptr<Base> b(new Base());
-//        b->read(f);
-//        if(f.fail()){
-//            cerr << "Read error in " << fileName << endl;
-//            b.reset();
-//            return false;
-//        }
-//        else multimedia[b->getName()] = b;
-//    }
-//    return true;
-//}
+bool Catalogue::load(const string &fileName){
+    ifstream f;
+    string type;
+    f.open(fileName);
+    if(!f){
+        cerr << "Can't open file " << fileName << endl;
+        return false;
+    }
+    while(f.good()){
+        getline(f,type);
+        if(type=="Photo"){
+            string arg;
+            stringstream args;
+            string name, pathname;
+            int lat,lon;
+            getline(f,arg);
+            args << arg;
+            args >> name >> pathname >> lat >> lon;
+            createPhoto(name, pathname,lat, lon);
+            cout << "created Photo" << endl;
+        }
+        if(type=="Video"){
+            string arg;
+            stringstream args;
+            string name, pathname;
+            int duree;
+            getline(f,arg);
+            args << arg;
+            args >> name >> pathname >> duree;
+            createVideo(name, pathname,duree);
+            cout << "created Video" << endl;
+        }
+        if(type=="Film"){
+            string arg;
+            stringstream args;
+            string name, pathname;
+            int duree;
+            unsigned int count;
+            getline(f,arg);
+            args << arg;
+            args >> name >> pathname >> duree >> count;
+            unsigned int d [count] = {};
+            for(int i=0; i<count; i++){
+                stringstream mem;
+                unsigned int mem2;
+                string mem1;
+                getline(f, mem1);
+                mem << mem1;
+                mem >> mem2;
+                d[i] = mem2;
+            }
+            cout << "aqui llega" << endl;
+            cout << name << " " << pathname << " " << duree << " " << d << " " << count << endl;
+            createFilm("film",pathname, duree, d,count);
+            //createFilm(name, pathname,duree, p, count);
+            cout << "created Film" << endl;
+        }
+
+    }
+    return true;
+}
 
 Catalogue::~Catalogue(){
     cout << "Catalogue deleted" << endl;

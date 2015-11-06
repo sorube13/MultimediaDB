@@ -9,7 +9,7 @@
 
 
 int main() {
-    if(1){
+    if(0){
         /*
          * Create new base and set attributes. Print on console result
         */
@@ -109,18 +109,40 @@ int main() {
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
-        //c->createGroup("Disney");
+        c->createGroup("Disney");
         string msg;
         msg = c->rechercher("jeje", cout);
         cout << "este es el resultado GUAY " << msg << endl;
         c->rechercher("video1", cout);
         c->rechercher("disney.jpg", cout);
-        //c->jouer("disney.jpg");
-        c->save("/cal/homes/sorube/Desktop/hello.html");
+        c->jouer("disney.jpg");
         c->supprimer("Photo 1.jpeg");
         c->supprimer("jejej");
         c->supprimer("Disney");
 
+    }
+
+    if(0){
+        shared_ptr<Catalogue> c(new Catalogue());
+        c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
+        c->createVideo("sample_video.mp4", "/cal/homes/sorube/Desktop/sample_video.mp4", 5);
+        c->save("/cal/homes/sorube/Desktop/hello.html");
+        c->supprimer("sample_video.mp4");
+        c->supprimer("disney.jpg");
+        c->load("/cal/homes/sorube/Desktop/hello.html");
+        c->rechercher("sample_video.mp4", cout);
+        c->rechercher("disney.jpg", cout);
+    }
+
+    if(1){
+        shared_ptr<Catalogue> c(new Catalogue());
+        unsigned int d [] = { 5 , 2 , 3 };
+        unsigned int num = 3;
+        c->createFilm("film", "/sorube/film", 100, d,num);
+        c->save("/cal/homes/sorube/Desktop/hello.html");
+        c->supprimer("film");
+        c->load("/cal/homes/sorube/Desktop/hello.html");
+        c->rechercher("film", cout);
     }
 
 

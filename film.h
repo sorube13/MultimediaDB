@@ -36,9 +36,9 @@ public:
 
 
     virtual string affichage(ostream & s) override {
-        s << "Film\nNOM: "<< getName() << " PATH:  "<< getPathname() << " DUREE: "<< getDuree() << " DUREES POINTER: " << getDurees() << endl;
+        s << "Film\n"<< getName() << " "<< getPathname() << " "<< getDuree() << " " << getNombreChapitres()<< endl;
         for(unsigned int i = 0; i< count; i++){
-            s<< "Chapitre " << i+1 << ": " <<  durees[i]<<endl;
+            s <<  durees[i]<< endl;
         }
         return "hola";
     }
