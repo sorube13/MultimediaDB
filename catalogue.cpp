@@ -10,6 +10,8 @@
 #include <exception>
 #include <stdio.h>
 #include <string.h>
+#include <iterator>
+#include <vector>
 
 using namespace std;
 
@@ -34,7 +36,7 @@ class InvalidCaracters: public exception
  */
 bool HasSpecialCharacters(const char *str)
 {
-    return str[strspn(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-:")] != 0;
+    return str[strspn(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-:/")] != 0;
 }
 
 /**
@@ -102,7 +104,8 @@ void Catalogue::createFilm(string n, string pathname, int duree, unsigned int *t
     try{
         if(multimedia[n]){
             cerr << "A film with the name " << n << " already exists" << endl;
-        }else if((sizeof(tab) <= 0) || (num<=0)){
+        }else if((num<=0)){
+            cerr << num << endl;
             cerr << "Incorrect film initialization of chapters for film: "<< n << endl;
         }
         else if (HasSpecialCharacters(n.c_str())==1) throw InvalidCaracters();
@@ -253,59 +256,54 @@ bool Catalogue::save(const string &fileName) {
  */
 bool Catalogue::load(const string &fileName){
     ifstream f;
-    string type;
+    string input;
     f.open(fileName);
     if(!f){
         cerr << "Can't open file " << fileName << endl;
         return false;
     }
     while(f.good()){
-        getline(f,type);
+        getline(f,input);
+        stringstream line;
+        line << input;
+        string type;
+        line >> type;
         if(type=="Photo"){
-            string arg;
-            stringstream args;
             string name, pathname;
             int lat,lon;
-            getline(f,arg);
-            args << arg;
-            args >> name >> pathname >> lat >> lon;
+            line >> type >> name >> pathname >> lat >> lon;
             createPhoto(name, pathname,lat, lon);
             cout << "created Photo" << endl;
         }
         if(type=="Video"){
-            string arg;
-            stringstream args;
             string name, pathname;
             int duree;
-            getline(f,arg);
-            args << arg;
-            args >> name >> pathname >> duree;
+            line >> type >> name >> pathname >> duree;
             createVideo(name, pathname,duree);
             cout << "created Video" << endl;
         }
         if(type=="Film"){
-            string arg;
-            stringstream args;
             string name, pathname;
             int duree;
             unsigned int count;
-            getline(f,arg);
-            args << arg;
-            args >> name >> pathname >> duree >> count;
+            string chapters;
+            line >> type >> name >> pathname >> duree >> count >> chapters;
             unsigned int d [count] = {};
-            for(unsigned int i=0; i<count; i++){
-                stringstream mem;
-                unsigned int mem2;
-                string mem1;
-                getline(f, mem1);
-                mem << mem1;
-                mem >> mem2;
-                d[i] = mem2;
-            }
+            cout << "hola: " << chapters << endl;
+            cout << pathname << endl;
+            stringstream buf(chapters);
+            istream_iterator<string> beg(line), end;
+            vector<std::string> tokens(beg, end); // done!
+            for(auto& s: tokens){
+               cout << "for "<< s << endl;
+        }
+
+
+
             cout << "aqui llega" << endl;
             cout << name << " " << pathname << " " << duree << " " << d << " " << count << endl;
-            createFilm("film",pathname, duree, d,count);
-            //createFilm(name, pathname,duree, p, count);
+            //createFilm("film",pathname, duree, d,count);
+            createFilm(name, pathname,duree, d, count);
             cout << "created Film" << endl;
         }
 

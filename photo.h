@@ -54,7 +54,7 @@ public:
      * Opens image with imagej
      */
     virtual void openObject(){
-        string s = "imagej "+ getPathname();
+        string s = "imagej "+ getPathname()+"&";
         system(s.c_str());
     }
 
@@ -64,7 +64,7 @@ public:
      * @return photo attributes
      */
     virtual string affichage(ostream & s) override {
-        string msg = "Photo\n" + getName() + " "+ getPathname() + " " + to_string(getLatitude()) + " " + to_string(getLongitude());
+        string msg = "Photo " + getName() + " "+ getPathname() + " " + to_string(getLatitude()) + " " + to_string(getLongitude());
         s << msg << endl;
         return msg;
     }

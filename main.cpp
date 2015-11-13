@@ -102,7 +102,7 @@ int main() {
         p->openObject();
     }
 
-    if(1){
+    if(0){
         shared_ptr<Catalogue> c(new Catalogue());
         c->createPhoto("dis¡ney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
@@ -137,7 +137,7 @@ int main() {
         c->rechercherMultimedia("disney.jpg", cout);
     }
 
-    if(0){
+    if(1){
         shared_ptr<Catalogue> c(new Catalogue());
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
@@ -146,6 +146,17 @@ int main() {
         c->supprimerMultimedia("film");
         c->load("/cal/homes/sorube/Desktop/hello.html");
         c->rechercherMultimedia("film", cout);
+    }
+
+    if(0){
+        shared_ptr<Film> f(new Film());
+        f->setName("sample_video.mp4");
+        f->setPathname("/cal/homes/sorube/Desktop/sample_video.mp4");
+        f->setDuree(5);
+        unsigned int d [] = { 5 , 2 , 3 };
+        unsigned int num = 3;
+        f->setDurees(d, num);
+        f->affichage(cout);
     }
 
 

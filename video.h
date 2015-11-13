@@ -50,7 +50,7 @@ public:
      * @return attributes of video
      */
     virtual string affichage(ostream & s) override {
-        string msg = "Video\n" + getName() + " "+ getPathname() + " "+ to_string(getDuree());
+        string msg = "Video " + getName() + " "+ getPathname() + " "+ to_string(getDuree());
         s << msg << endl;
         return msg;
     }
