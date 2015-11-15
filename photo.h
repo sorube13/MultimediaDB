@@ -54,8 +54,11 @@ public:
      * Opens image with imagej
      */
     virtual void openObject(){
-        string s = "imagej "+ getPathname();
+        string s = "imagej "+ getPathname() + " &";
+        cout << "openObject s: " << s << endl;
+        cout << "openObject cstring: " << s.c_str() << endl;
         system(s.c_str());
+        //system("imagej /home/sorube/Documents/INF224/disney.jpg &");
     }
 
     /**

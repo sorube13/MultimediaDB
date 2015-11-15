@@ -40,7 +40,7 @@ public:
      * Plays video using mpv
      */
     virtual void openObject(){
-        string s = "mpv "+ getPathname() ;
+        string s = "mpv "+ getPathname() + " &";
         system(s.c_str());
     }
 

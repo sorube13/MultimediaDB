@@ -23,7 +23,7 @@ int main() {
         */
         shared_ptr<Photo> p(new Photo());
         p->setName("disney.jpg");
-        p->setPathname("/cal/homes/sorube/Desktop/disney.jpg");
+        p->setPathname("/home/sorube/Documents/INF224/disney.jpg");
         p->setLatitude(10.0);
         p->setLongitude(15.0);
         p->affichage(cout);
@@ -33,8 +33,8 @@ int main() {
          * Create new Video and set attributes. Print on console result
         */
         shared_ptr<Video> v(new Video());
-        v->setName("sample_video.mp4");
-        v->setPathname("/cal/homes/sorube/Desktop/sample_video.mp4");
+        v->setName("video1.mp4");
+        v->setPathname("/home/sorube/Documents/INF224/video1.mp4");
         v->setDuree(5);
         //v->affichage(cout);
         //v->openObject();
@@ -92,17 +92,19 @@ int main() {
         //f.reset();
     }
 
-    if(0){
-        shared_ptr<Photo> p(new Photo());
+    if(1){
+        //shared_ptr<Photo> p(new Photo());
+        Photo* p = new Photo();
         p->setName("disney.jpg");
-        p->setPathname("/cal/homes/sorube/Desktop/disney.jpg");
+        p->setPathname("/home/sorube/Documents/INF224/disney.jpg");
         p->setLatitude(10.0);
         p->setLongitude(15.0);
         p->affichage(cout);
         p->openObject();
+
     }
 
-    if(1){
+    if(0){
         shared_ptr<Catalogue> c(new Catalogue());
         c->createPhoto("dis¡ney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
         c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
