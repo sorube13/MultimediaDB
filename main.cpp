@@ -92,15 +92,24 @@ int main() {
         //f.reset();
     }
 
-    if(1){
-        //shared_ptr<Photo> p(new Photo());
-        Photo* p = new Photo();
+    if(0){
+        shared_ptr<Photo> p(new Photo());
         p->setName("disney.jpg");
         p->setPathname("/home/sorube/Documents/INF224/disney.jpg");
         p->setLatitude(10.0);
         p->setLongitude(15.0);
         p->affichage(cout);
         p->openObject();
+
+    }
+
+    if(1){
+        shared_ptr<Video> v(new Video());
+        v->setName("video1.mp4");
+        v->setPathname("/home/sorube/Documents/INF224/video1.mp4");
+        v->setDuree(5);
+        v->affichage(cout);
+        v->openObject();
 
     }
 
