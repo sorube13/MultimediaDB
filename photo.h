@@ -55,10 +55,7 @@ public:
      */
     virtual void openObject(){
         string s = "xdg-open " + getPathname() + " &" ;
-        cout << "openObject s: " << s << endl;
-        cout << "openObject cstring: " << s.c_str() << endl;
         system(s.c_str());
-        //system("imagej /home/sorube/Documents/INF224/disney.jpg &");
     }
 
     /**

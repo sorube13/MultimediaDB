@@ -103,7 +103,7 @@ int main() {
 
     }
 
-    if(1){
+    if(0){
         shared_ptr<Video> v(new Video());
         v->setName("video1.mp4");
         v->setPathname("/home/sorube/Documents/INF224/video1.mp4");
@@ -115,9 +115,9 @@ int main() {
 
     if(0){
         shared_ptr<Catalogue> c(new Catalogue());
-        c->createPhoto("dis¡ney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
-        c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
-        c->createVideo("video1", "/sorube/video", 120);
+        c->createPhoto("disney.jpg", "/home/sorube/Documents/INF224/disney.jpg", 1.23, 2.34);
+        c->createPhoto("disney.jpg", "home/sorube/Documents/INF224/disney.jpg", 1.23, 2.34);
+        c->createVideo("video1.mp4", "home/sorube/Documents/INF224/video1.mp4", 120);
         unsigned int d [] = {5, 2, 3};
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
@@ -126,10 +126,10 @@ int main() {
         c->createGroup("Disney");
         cout << "double disney group" << endl;
         c->rechercherMultimedia("jeje", cout);
-        c->rechercherMultimedia("video1", cout);
+        c->rechercherMultimedia("video1.mp4", cout);
         c->rechercherMultimedia("disney.jpg", cout);
-        //c->jouer("disney.jpg");
-        c->supprimerMultimedia("Photo 1.jpeg");
+        c->jouer("disney.jpg");
+        c->supprimerMultimedia("disney.jpeg");
         c->supprimerMultimedia("jejej");
         c->supprimerGroup("Disney");
         c->supprimerGroup("tralala");
@@ -138,24 +138,30 @@ int main() {
 
     if(0){
         shared_ptr<Catalogue> c(new Catalogue());
-        c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
-        c->createVideo("sample_video.mp4", "/cal/homes/sorube/Desktop/sample_video.mp4", 5);
-        c->save("/cal/homes/sorube/Desktop/hello.html");
-        c->supprimerMultimedia("sample_video.mp4");
+        c->createPhoto("disney.jpg", "/home/sorube/Documents/INF224/disney.jpg", 1.23, 2.34);
+        c->createVideo("video1.mp4", "/home/sorube/Documents/INF224/video1.mp4", 5);
+        if(c->save("/home/sorube/Documents/INF224/hello.html"))
+            cout<< "Saved file" <<endl;
+        c->supprimerMultimedia("video1.mp4");
         c->supprimerMultimedia("disney.jpg");
-        c->load("/cal/homes/sorube/Desktop/hello.html");
-        c->rechercherMultimedia("sample_video.mp4", cout);
+        c->rechercherMultimedia("video1.mp4", cout); //Should not find
+        c->rechercherMultimedia("disney.jpg", cout);
+        if(c->load("/home/sorube/Documents/INF224/hello.html"))
+            cout << "Loaded file"<< endl;
+        c->rechercherMultimedia("video1.mp4", cout);
         c->rechercherMultimedia("disney.jpg", cout);
     }
 
-    if(0){
+    if(1){
         shared_ptr<Catalogue> c(new Catalogue());
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
-        c->save("/cal/homes/sorube/Desktop/hello.html");
+        if(c->save("/home/sorube/Documents/INF224/hello.html"))
+            cout << "saved film to file" << endl;
         c->supprimerMultimedia("film");
-        c->load("/cal/homes/sorube/Desktop/hello.html");
+        if(c->load("/home/sorube/Documents/INF224/hello.html"))
+            cout << "loaded film" <<endl;
         c->rechercherMultimedia("film", cout);
     }
 

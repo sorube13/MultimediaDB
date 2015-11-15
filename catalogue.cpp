@@ -292,20 +292,13 @@ bool Catalogue::load(const string &fileName){
             getline(f,arg);
             args << arg;
             args >> name >> pathname >> duree >> count;
-            /*unsigned int d [count] = {};
+            unsigned int d [count];
             for(unsigned int i=0; i<count; i++){
-                stringstream mem;
-                unsigned int mem2;
                 string mem1;
                 getline(f, mem1);
-                mem << mem1;
-                mem >> mem2;
-                d[i] = mem2;
-            }*/
-            cout << "aqui llega" << endl;
-            //cout << name << " " << pathname << " " << duree << " " << d << " " << count << endl;
-            //createFilm("film",pathname, duree, d,count);
-            //createFilm(name, pathname,duree, p, count);
+                d[i] = stoi(mem1);
+            }
+            createFilm(name, pathname,duree, d, count);
             cout << "created Film" << endl;
         }
 

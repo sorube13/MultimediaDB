@@ -39,20 +39,24 @@ public:
     bool changeData = false;
 
     shared_ptr<Catalogue> c(new Catalogue());
-    c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
-    c->createVideo("video 1", "/sorube/video", 120);
+    c->createPhoto("disney.jpg", "/home/sorube/Documents/INF224/disney.jpg", 1.23, 2.34);
+    c->createVideo("video1.mp4", "/home/sorube/Documents/INF224/video1.mp4", 5);
     unsigned int d [] = { 5 , 2 , 3 };
     unsigned int num = 3;
     c->createFilm("film", "/sorube/film", 100, d,num);
 
     stringstream r;
     string method, args;
+    stringstream otro;
+    string o;
 
     r<<request;
     r >> method >> args;
 
     if(method == "rechercher" || method =="1"){
-        response = c->rechercher(args, cout);
+        otro << c->rechercherMultimedia(args, cout);
+        getline(otro, o);
+        getline(otro, response);
 
     }else if(method=="jouer" || method =="2"){
         response = "Multimedia being played in server";
