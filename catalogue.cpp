@@ -34,7 +34,7 @@ class InvalidCaracters: public exception
  */
 bool HasSpecialCharacters(const char *str)
 {
-    return str[strspn(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-:")] != 0;
+    return str[strspn(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-:/")] != 0;
 }
 
 /**

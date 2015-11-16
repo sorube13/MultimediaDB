@@ -13,15 +13,6 @@ class MyApp {
 public:
 
 
-    MyApp(){
-        shared_ptr<Catalogue> c(new Catalogue());
-        c->createPhoto("disney.jpg", "/cal/homes/sorube/Desktop/disney.jpg", 1.23, 2.34);
-        c->createVideo("video 1", "/sorube/video", 120);
-        unsigned int d [] = { 5 , 2 , 3 };
-        unsigned int num = 3;
-        c->createFilm("film", "/sorube/film", 100, d,num);
-    }
-
   /// Cette fonction est appelée chaque fois qu'il y a une requête à traiter.
   /// - 'request' contient la requête
   /// - 'response' sert à indiquer la réponse qui sera renvoyée au client
