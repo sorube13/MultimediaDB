@@ -29,6 +29,10 @@ public:
     // mettre cette variable à true si la commande modifie les donnees du programme
     bool changeData = false;
 
+    /// Creates new catalogue with default parameters
+    /// photo: disney.jpg
+    /// video: video1.mp4
+    /// film: film
     shared_ptr<Catalogue> c(new Catalogue());
     c->createPhoto("disney.jpg", "/home/sorube/Documents/INF224/disney.jpg", 1.23, 2.34);
     c->createVideo("video1.mp4", "/home/sorube/Documents/INF224/video1.mp4", 5);
@@ -43,7 +47,8 @@ public:
 
     r<<request;
     r >> method >> args;
-
+    /// If the petition has "rechercher" or "1" followed by a multimedia object name the client
+    ///  will receive the answer for the method rechercherMultimedia
     if(method == "rechercher" || method =="1"){
         recherche << c->rechercherMultimedia(args, cout);
         cout << "recherche has: " << recherche.str()<< endl;
@@ -55,7 +60,8 @@ public:
             //getLine(recherche, a);
             response = response + " " + a;
          }
-
+    /// If the petition has "jouer" or "2" followed by a multimedia object name, the server will
+    /// open the object and alert the client that it is being played
     }else if(method=="jouer" || method =="2"){
         response = "Multimedia being played in server";
         c->jouer(args);

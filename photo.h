@@ -5,7 +5,19 @@
 #include <iostream>
 
 using namespace std;
-
+/**
+ * @brief The Photo class
+ * params:
+ *      lat: double
+ *      lon: double
+ * methods:
+ *      setLatitude(double la)
+ *      setLongitude(double lo)
+ *      getLatitude()
+ *      getLongitude()
+ *      openObject()
+ *      affichage(ostream &s)
+ */
 class Photo : public Base
 {
 private:
@@ -13,45 +25,48 @@ private:
 
 public:
     /**
-     * @brief Photo
+     * @brief Photo Constructor Overcharge
      */
     Photo() {}
     /**
      * @brief Photo
-     * @param name
-     * @param pathname
-     * @param lat
-     * @param lon
+     * @param name: string
+     * @param pathname: string
+     * @param lat: double
+     * @param lon: double
      */
     Photo(string name, string pathname, double lat, double lon) : Base(name, pathname), lat(lat), lon(lon){}
 
     /**
      * @brief setLatitude
-     * @param la
+     * @param la: double
+     * sets lat to the value of la
      */
     virtual void setLatitude(double la){ lat = la; }
 
     /**
      * @brief setLongitude
-     * @param lo
+     * @param lo: double
+     * sets lon  to the value of lo
      */
     virtual void setLongitude(double lo){ lon= lo; }
 
     /**
      * @brief getLatitude
-     * @return latitude
+     * @return lat double
      */
     virtual int getLatitude() const{ return lat; }
 
     /**
      * @brief getLongitude
-     * @return longitude
+     * @return lon double
      */
     virtual int getLongitude() const { return lon; }
 
     /**
      * @brief openObject
-     * Opens image with imagej
+     * Opens image with xdg-open (default program) due to the fact that with imagej, it would not work
+     * properly without the "&", and this solution worked better
      */
     virtual void openObject(){
         string s = "xdg-open " + getPathname() + " &" ;
@@ -60,8 +75,9 @@ public:
 
     /**
      * @brief affichage
-     * @param s
-     * @return photo attributes
+     * @param s: ostream
+     * @return string of all photo attributes
+     * Prints through s the returned string
      */
     virtual string affichage(ostream & s) override {
         string msg = "Photo\n" + getName() + " "+ getPathname() + " " + to_string(getLatitude()) + " " + to_string(getLongitude());
@@ -69,7 +85,7 @@ public:
         return msg;
     }
     /**
-     * @brief ~Photo
+     * @brief ~Photo Destructor
      */
     virtual ~Photo(){
         //cout << "Photo deleted" << endl;
