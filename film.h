@@ -4,7 +4,17 @@
 #include <iostream>
 
 using namespace std;
-
+/**
+ * @brief The Film class
+ * params:
+ *      count: unsigned int
+ *      *durees: unsigned int
+ * methods:
+ *      setDurees(unsigned int *tab, unsigned int num)
+ *      getDurees()
+ *      getNombreChapitres()
+ *      affichage(ostream & s)
+ */
 class Film : public Video
 {
 private:
@@ -14,21 +24,23 @@ private:
 public:
 
     /**
-     * @brief Film
+     * @brief Film constructor overcharge
      */
     Film() {}
     /**
-     * @brief Film
-     * @param name
-     * @param pathname
-     * @param duree
+     * @brief Film Constructor
+     * @param name: string
+     * @param pathname: string
+     * @param duree: int
+     * Creates a film with the same parameters as a video
      */
     Film(string name, string pathname, int duree) : Video(name, pathname, duree) {}
 
     /**
      * @brief setDurees
-     * @param tab
-     * @param num
+     * @param tab: unsigned int
+     * @param num: unsigned int
+     * Sets the parameter durees to the film, copying the variable tab to durees.
      */
     virtual void setDurees(unsigned int *tab, unsigned int num) {
         count = num;
@@ -49,7 +61,7 @@ public:
 
     /**
      * @brief getNombreChapitres
-     * @return number of chapters
+     * @return count: number of chapters
      */
     virtual int getNombreChapitres() const{
         return count;
@@ -57,17 +69,15 @@ public:
 
     /**
      * @brief affichage
-     * @param s
-     * @return film attributes
+     * @param s: ostream
+     * @return string of film attributes
+     * Also prints in s the return string
      */
     virtual string affichage(ostream & s) override {
         string msg;
-        //msg = "Film!!!";
         msg = "Film\n" + getName() + " " + getPathname() + " " + to_string(getDuree()) + " " +to_string(getNombreChapitres());
-        //s << "Film\n"<< getName() << " "<< getPathname() << " "<< getDuree() << " " << getNombreChapitres()<< endl;
         for(unsigned int i = 0; i< count; i++){
             msg = msg +  "\n" + to_string(durees[i]);
-            //s <<  durees[i]<< endl;
         }
         s << msg << endl;
         return msg;
@@ -75,7 +85,7 @@ public:
 
 
     /**
-     * @brief ~Film
+     * @brief ~Film Destructor
      */
     virtual ~Film(){
         delete [] durees;

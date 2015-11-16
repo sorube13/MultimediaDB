@@ -4,7 +4,15 @@
 #include <list>
 
 using namespace std;
-
+/**
+ * @brief The Group class
+ * params:
+ *      name: string
+ * methods:
+ *      setName(string n)
+ *      getGroupName()
+ *      affichage(ostream & s)
+ */
 class Group : public list<Base*>
 {
 private:
@@ -14,12 +22,12 @@ private:
 
 public:
     /**
-     * @brief Group
+     * @brief Group Constructor overcharge
      */
     Group() {}
     /**
      * @brief Group
-     * @param name
+     * @param name: string
      */
     Group(string name){
         this->name = name;
@@ -27,7 +35,8 @@ public:
 
     /**
      * @brief setName
-     * @param n
+     * @param n: string
+     * Sets the name of the group to n
      */
     virtual void setName(string n){
         name = n;
@@ -35,7 +44,7 @@ public:
 
     /**
      * @brief getGroupName
-     * @return group name
+     * @return string of group name
      */
     virtual string getGroupName(){
         return name;
@@ -43,8 +52,9 @@ public:
 
     /**
      * @brief affichage
-     * @param s
-     * @return attributes of group
+     * @param s: ostream
+     * @return string of attributes of group
+     * Prints through s the returned string
      */
     virtual string affichage(ostream & s) {
         string msg;
@@ -61,7 +71,7 @@ public:
     }
 
     /**
-     * @brief ~Group
+     * @brief ~Group Destructor
      */
     virtual ~Group(){
         //cout << "Group deleted" << endl;
