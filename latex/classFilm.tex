@@ -1,0 +1,143 @@
+\hypertarget{classFilm}{\section{Film Class Reference}
+\label{classFilm}\index{Film@{Film}}
+}
+
+
+The \hyperlink{classFilm}{Film} class params\-: count\-: unsigned int $\ast$durees\-: unsigned int methods\-: \hyperlink{classFilm_acf9c4384117b17333e434d410914d48b}{set\-Durees(unsigned int $\ast$tab, unsigned int num)} \hyperlink{classFilm_a2beb91b3aa53d2b1f25e43783585aaf0}{get\-Durees()} \hyperlink{classFilm_a094ff01cf9629b9ec0bed4e6efd140d3}{get\-Nombre\-Chapitres()} \hyperlink{classFilm_a0fd2b4ba12627d9268fb0ee64b850b15}{affichage(ostream \& s)}  
+
+
+
+
+{\ttfamily \#include $<$film.\-h$>$}
+
+Inheritance diagram for Film\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classFilm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}{\hyperlink{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}{Film} ()}\label{classFilm_af2835db2b0ef3a87aaa3222f4d9d1ae3}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFilm}{Film} constructor overcharge. \end{DoxyCompactList}\item 
+\hyperlink{classFilm_a9d262bf64fd6de5a6f272ed75bae4dba}{Film} (string name, string pathname, int duree)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classFilm}{Film} Constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classFilm_acf9c4384117b17333e434d410914d48b}{set\-Durees} (unsigned int $\ast$tab, unsigned int num)
+\begin{DoxyCompactList}\small\item\em set\-Durees \end{DoxyCompactList}\item 
+virtual unsigned const int $\ast$ \hyperlink{classFilm_a2beb91b3aa53d2b1f25e43783585aaf0}{get\-Durees} () const 
+\begin{DoxyCompactList}\small\item\em get\-Durees \end{DoxyCompactList}\item 
+virtual int \hyperlink{classFilm_a094ff01cf9629b9ec0bed4e6efd140d3}{get\-Nombre\-Chapitres} () const 
+\begin{DoxyCompactList}\small\item\em get\-Nombre\-Chapitres \end{DoxyCompactList}\item 
+virtual string \hyperlink{classFilm_a0fd2b4ba12627d9268fb0ee64b850b15}{affichage} (ostream \&s) override
+\begin{DoxyCompactList}\small\item\em affichage \end{DoxyCompactList}\item 
+\hypertarget{classFilm_a490465154daeb29961fddb843a864eeb}{virtual \hyperlink{classFilm_a490465154daeb29961fddb843a864eeb}{$\sim$\-Film} ()}\label{classFilm_a490465154daeb29961fddb843a864eeb}
+
+\begin{DoxyCompactList}\small\item\em $\sim$\-Film Destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classFilm}{Film} class params\-: count\-: unsigned int $\ast$durees\-: unsigned int methods\-: \hyperlink{classFilm_acf9c4384117b17333e434d410914d48b}{set\-Durees(unsigned int $\ast$tab, unsigned int num)} \hyperlink{classFilm_a2beb91b3aa53d2b1f25e43783585aaf0}{get\-Durees()} \hyperlink{classFilm_a094ff01cf9629b9ec0bed4e6efd140d3}{get\-Nombre\-Chapitres()} \hyperlink{classFilm_a0fd2b4ba12627d9268fb0ee64b850b15}{affichage(ostream \& s)} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classFilm_a9d262bf64fd6de5a6f272ed75bae4dba}{\index{Film@{Film}!Film@{Film}}
+\index{Film@{Film}!Film@{Film}}
+\subsubsection[{Film}]{\setlength{\rightskip}{0pt plus 5cm}Film\-::\-Film (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{pathname, }
+\item[{int}]{duree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classFilm_a9d262bf64fd6de5a6f272ed75bae4dba}
+
+
+\hyperlink{classFilm}{Film} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string \\
+\hline
+{\em pathname} & string \\
+\hline
+{\em duree} & int Creates a film with the same parameters as a video \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classFilm_a0fd2b4ba12627d9268fb0ee64b850b15}{\index{Film@{Film}!affichage@{affichage}}
+\index{affichage@{affichage}!Film@{Film}}
+\subsubsection[{affichage}]{\setlength{\rightskip}{0pt plus 5cm}virtual string Film\-::affichage (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classFilm_a0fd2b4ba12627d9268fb0ee64b850b15}
+
+
+affichage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & ostream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string of film attributes Also prints in s the return string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classVideo_a180c985ff368f77d0fb66ec106106f00}{Video}.
+
+\hypertarget{classFilm_a2beb91b3aa53d2b1f25e43783585aaf0}{\index{Film@{Film}!get\-Durees@{get\-Durees}}
+\index{get\-Durees@{get\-Durees}!Film@{Film}}
+\subsubsection[{get\-Durees}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned const int$\ast$ Film\-::get\-Durees (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classFilm_a2beb91b3aa53d2b1f25e43783585aaf0}
+
+
+get\-Durees 
+
+\begin{DoxyReturn}{Returns}
+pointer to array of durees 
+\end{DoxyReturn}
+\hypertarget{classFilm_a094ff01cf9629b9ec0bed4e6efd140d3}{\index{Film@{Film}!get\-Nombre\-Chapitres@{get\-Nombre\-Chapitres}}
+\index{get\-Nombre\-Chapitres@{get\-Nombre\-Chapitres}!Film@{Film}}
+\subsubsection[{get\-Nombre\-Chapitres}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Film\-::get\-Nombre\-Chapitres (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classFilm_a094ff01cf9629b9ec0bed4e6efd140d3}
+
+
+get\-Nombre\-Chapitres 
+
+\begin{DoxyReturn}{Returns}
+count\-: number of chapters 
+\end{DoxyReturn}
+\hypertarget{classFilm_acf9c4384117b17333e434d410914d48b}{\index{Film@{Film}!set\-Durees@{set\-Durees}}
+\index{set\-Durees@{set\-Durees}!Film@{Film}}
+\subsubsection[{set\-Durees}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Film\-::set\-Durees (
+\begin{DoxyParamCaption}
+\item[{unsigned int $\ast$}]{tab, }
+\item[{unsigned int}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classFilm_acf9c4384117b17333e434d410914d48b}
+
+
+set\-Durees 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tab} & unsigned int \\
+\hline
+{\em num} & unsigned int Sets the parameter durees to the film, copying the variable tab to durees. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+film.\-h\end{DoxyCompactItemize}

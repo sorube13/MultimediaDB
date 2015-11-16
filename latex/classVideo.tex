@@ -1,0 +1,131 @@
+\hypertarget{classVideo}{\section{Video Class Reference}
+\label{classVideo}\index{Video@{Video}}
+}
+
+
+The \hyperlink{classVideo}{Video} class params\-: duree\-: int methods\-: \hyperlink{classVideo_af9bf19109d8c613426173524942a59f0}{set\-Duree(int d)} \hyperlink{classVideo_a6ce28ec6b467212e7bb3cbf635b57598}{get\-Duree()} \hyperlink{classVideo_af6a8d2f22330651f3f264292e580dca3}{open\-Object()} \hyperlink{classVideo_a180c985ff368f77d0fb66ec106106f00}{affichage(ostream \&s)}  
+
+
+
+
+{\ttfamily \#include $<$video.\-h$>$}
+
+Inheritance diagram for Video\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classVideo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVideo_ab67336c2c5b6227a9635bc7dcd6af543}{\hyperlink{classVideo_ab67336c2c5b6227a9635bc7dcd6af543}{Video} ()}\label{classVideo_ab67336c2c5b6227a9635bc7dcd6af543}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classVideo}{Video} Constructor overcharge. \end{DoxyCompactList}\item 
+\hyperlink{classVideo_ab5a0624db51e978d6d87aa40012885d7}{Video} (string name, string pathname, int duree)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classVideo}{Video} Constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classVideo_af9bf19109d8c613426173524942a59f0}{set\-Duree} (int d)
+\begin{DoxyCompactList}\small\item\em set\-Duree \end{DoxyCompactList}\item 
+virtual int \hyperlink{classVideo_a6ce28ec6b467212e7bb3cbf635b57598}{get\-Duree} () const 
+\begin{DoxyCompactList}\small\item\em get\-Duree \end{DoxyCompactList}\item 
+\hypertarget{classVideo_af6a8d2f22330651f3f264292e580dca3}{virtual void \hyperlink{classVideo_af6a8d2f22330651f3f264292e580dca3}{open\-Object} ()}\label{classVideo_af6a8d2f22330651f3f264292e580dca3}
+
+\begin{DoxyCompactList}\small\item\em open\-Object Plays video using xdg-\/open (opens with default program). As with \hyperlink{classPhoto}{Photo}, there was a problem using the \& and did not weork properly, with this solution it seems to be solved \end{DoxyCompactList}\item 
+virtual string \hyperlink{classVideo_a180c985ff368f77d0fb66ec106106f00}{affichage} (ostream \&s) override
+\begin{DoxyCompactList}\small\item\em affichage \end{DoxyCompactList}\item 
+\hypertarget{classVideo_a07a39b94dddfa02e0b0d7b196e9c9f53}{virtual \hyperlink{classVideo_a07a39b94dddfa02e0b0d7b196e9c9f53}{$\sim$\-Video} ()}\label{classVideo_a07a39b94dddfa02e0b0d7b196e9c9f53}
+
+\begin{DoxyCompactList}\small\item\em $\sim$\-Video Destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classVideo}{Video} class params\-: duree\-: int methods\-: \hyperlink{classVideo_af9bf19109d8c613426173524942a59f0}{set\-Duree(int d)} \hyperlink{classVideo_a6ce28ec6b467212e7bb3cbf635b57598}{get\-Duree()} \hyperlink{classVideo_af6a8d2f22330651f3f264292e580dca3}{open\-Object()} \hyperlink{classVideo_a180c985ff368f77d0fb66ec106106f00}{affichage(ostream \&s)} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVideo_ab5a0624db51e978d6d87aa40012885d7}{\index{Video@{Video}!Video@{Video}}
+\index{Video@{Video}!Video@{Video}}
+\subsubsection[{Video}]{\setlength{\rightskip}{0pt plus 5cm}Video\-::\-Video (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{pathname, }
+\item[{int}]{duree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classVideo_ab5a0624db51e978d6d87aa40012885d7}
+
+
+\hyperlink{classVideo}{Video} Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string \\
+\hline
+{\em pathname} & string \\
+\hline
+{\em duree} & int \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVideo_a180c985ff368f77d0fb66ec106106f00}{\index{Video@{Video}!affichage@{affichage}}
+\index{affichage@{affichage}!Video@{Video}}
+\subsubsection[{affichage}]{\setlength{\rightskip}{0pt plus 5cm}virtual string Video\-::affichage (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classVideo_a180c985ff368f77d0fb66ec106106f00}
+
+
+affichage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & ostream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string of attributes of video Prints through s the returned string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classBase_ad712ff856464b0d3fa96d07eae70a90e}{Base}.
+
+
+
+Reimplemented in \hyperlink{classFilm_a0fd2b4ba12627d9268fb0ee64b850b15}{Film}.
+
+\hypertarget{classVideo_a6ce28ec6b467212e7bb3cbf635b57598}{\index{Video@{Video}!get\-Duree@{get\-Duree}}
+\index{get\-Duree@{get\-Duree}!Video@{Video}}
+\subsubsection[{get\-Duree}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Video\-::get\-Duree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classVideo_a6ce28ec6b467212e7bb3cbf635b57598}
+
+
+get\-Duree 
+
+\begin{DoxyReturn}{Returns}
+duree int (duration of video) 
+\end{DoxyReturn}
+\hypertarget{classVideo_af9bf19109d8c613426173524942a59f0}{\index{Video@{Video}!set\-Duree@{set\-Duree}}
+\index{set\-Duree@{set\-Duree}!Video@{Video}}
+\subsubsection[{set\-Duree}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Video\-::set\-Duree (
+\begin{DoxyParamCaption}
+\item[{int}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classVideo_af9bf19109d8c613426173524942a59f0}
+
+
+set\-Duree 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & int Sets duree to the value of d \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+video.\-h\end{DoxyCompactItemize}

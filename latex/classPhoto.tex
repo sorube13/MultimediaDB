@@ -1,0 +1,164 @@
+\hypertarget{classPhoto}{\section{Photo Class Reference}
+\label{classPhoto}\index{Photo@{Photo}}
+}
+
+
+The \hyperlink{classPhoto}{Photo} class params\-: lat\-: double lon\-: double methods\-: \hyperlink{classPhoto_a2a33bfd34dc606f17f4cb4ff1505afbe}{set\-Latitude(double la)} \hyperlink{classPhoto_a5846dcbc510174ed2db5cbbe99367a7f}{set\-Longitude(double lo)} \hyperlink{classPhoto_ac96f7a44787994f828e1fb24a4bdf768}{get\-Latitude()} \hyperlink{classPhoto_a736b26be1028d360f59800512b89b287}{get\-Longitude()} \hyperlink{classPhoto_a37b62ddde8114037efc2f8a8e97d0df0}{open\-Object()} \hyperlink{classPhoto_a2965c65d2ad33ebf2ac3b3cfad123fbb}{affichage(ostream \&s)}  
+
+
+
+
+{\ttfamily \#include $<$photo.\-h$>$}
+
+Inheritance diagram for Photo\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPhoto}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}{\hyperlink{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}{Photo} ()}\label{classPhoto_a10ef03ede9235052eb9f7d5e950f85d3}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPhoto}{Photo} Constructor Overcharge. \end{DoxyCompactList}\item 
+\hyperlink{classPhoto_a6f5de7ca78d5a4b10ce8b5e86c346452}{Photo} (string name, string pathname, double lat, double lon)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classPhoto}{Photo}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPhoto_a2a33bfd34dc606f17f4cb4ff1505afbe}{set\-Latitude} (double la)
+\begin{DoxyCompactList}\small\item\em set\-Latitude \end{DoxyCompactList}\item 
+virtual void \hyperlink{classPhoto_a5846dcbc510174ed2db5cbbe99367a7f}{set\-Longitude} (double lo)
+\begin{DoxyCompactList}\small\item\em set\-Longitude \end{DoxyCompactList}\item 
+virtual int \hyperlink{classPhoto_ac96f7a44787994f828e1fb24a4bdf768}{get\-Latitude} () const 
+\begin{DoxyCompactList}\small\item\em get\-Latitude \end{DoxyCompactList}\item 
+virtual int \hyperlink{classPhoto_a736b26be1028d360f59800512b89b287}{get\-Longitude} () const 
+\begin{DoxyCompactList}\small\item\em get\-Longitude \end{DoxyCompactList}\item 
+\hypertarget{classPhoto_a37b62ddde8114037efc2f8a8e97d0df0}{virtual void \hyperlink{classPhoto_a37b62ddde8114037efc2f8a8e97d0df0}{open\-Object} ()}\label{classPhoto_a37b62ddde8114037efc2f8a8e97d0df0}
+
+\begin{DoxyCompactList}\small\item\em open\-Object Opens image with xdg-\/open (default program) due to the fact that with imagej, it would not work properly without the \char`\"{}\&\char`\"{}, and this solution worked better \end{DoxyCompactList}\item 
+virtual string \hyperlink{classPhoto_a2965c65d2ad33ebf2ac3b3cfad123fbb}{affichage} (ostream \&s) override
+\begin{DoxyCompactList}\small\item\em affichage \end{DoxyCompactList}\item 
+\hypertarget{classPhoto_a1bf707fc71f95a3aa3464bd4e339afd0}{virtual \hyperlink{classPhoto_a1bf707fc71f95a3aa3464bd4e339afd0}{$\sim$\-Photo} ()}\label{classPhoto_a1bf707fc71f95a3aa3464bd4e339afd0}
+
+\begin{DoxyCompactList}\small\item\em $\sim$\-Photo Destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classPhoto}{Photo} class params\-: lat\-: double lon\-: double methods\-: \hyperlink{classPhoto_a2a33bfd34dc606f17f4cb4ff1505afbe}{set\-Latitude(double la)} \hyperlink{classPhoto_a5846dcbc510174ed2db5cbbe99367a7f}{set\-Longitude(double lo)} \hyperlink{classPhoto_ac96f7a44787994f828e1fb24a4bdf768}{get\-Latitude()} \hyperlink{classPhoto_a736b26be1028d360f59800512b89b287}{get\-Longitude()} \hyperlink{classPhoto_a37b62ddde8114037efc2f8a8e97d0df0}{open\-Object()} \hyperlink{classPhoto_a2965c65d2ad33ebf2ac3b3cfad123fbb}{affichage(ostream \&s)} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPhoto_a6f5de7ca78d5a4b10ce8b5e86c346452}{\index{Photo@{Photo}!Photo@{Photo}}
+\index{Photo@{Photo}!Photo@{Photo}}
+\subsubsection[{Photo}]{\setlength{\rightskip}{0pt plus 5cm}Photo\-::\-Photo (
+\begin{DoxyParamCaption}
+\item[{string}]{name, }
+\item[{string}]{pathname, }
+\item[{double}]{lat, }
+\item[{double}]{lon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classPhoto_a6f5de7ca78d5a4b10ce8b5e86c346452}
+
+
+\hyperlink{classPhoto}{Photo}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & string \\
+\hline
+{\em pathname} & string \\
+\hline
+{\em lat} & double \\
+\hline
+{\em lon} & double \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPhoto_a2965c65d2ad33ebf2ac3b3cfad123fbb}{\index{Photo@{Photo}!affichage@{affichage}}
+\index{affichage@{affichage}!Photo@{Photo}}
+\subsubsection[{affichage}]{\setlength{\rightskip}{0pt plus 5cm}virtual string Photo\-::affichage (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}}\label{classPhoto_a2965c65d2ad33ebf2ac3b3cfad123fbb}
+
+
+affichage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & ostream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string of all photo attributes Prints through s the returned string 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classBase_ad712ff856464b0d3fa96d07eae70a90e}{Base}.
+
+\hypertarget{classPhoto_ac96f7a44787994f828e1fb24a4bdf768}{\index{Photo@{Photo}!get\-Latitude@{get\-Latitude}}
+\index{get\-Latitude@{get\-Latitude}!Photo@{Photo}}
+\subsubsection[{get\-Latitude}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Photo\-::get\-Latitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classPhoto_ac96f7a44787994f828e1fb24a4bdf768}
+
+
+get\-Latitude 
+
+\begin{DoxyReturn}{Returns}
+lat double 
+\end{DoxyReturn}
+\hypertarget{classPhoto_a736b26be1028d360f59800512b89b287}{\index{Photo@{Photo}!get\-Longitude@{get\-Longitude}}
+\index{get\-Longitude@{get\-Longitude}!Photo@{Photo}}
+\subsubsection[{get\-Longitude}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Photo\-::get\-Longitude (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classPhoto_a736b26be1028d360f59800512b89b287}
+
+
+get\-Longitude 
+
+\begin{DoxyReturn}{Returns}
+lon double 
+\end{DoxyReturn}
+\hypertarget{classPhoto_a2a33bfd34dc606f17f4cb4ff1505afbe}{\index{Photo@{Photo}!set\-Latitude@{set\-Latitude}}
+\index{set\-Latitude@{set\-Latitude}!Photo@{Photo}}
+\subsubsection[{set\-Latitude}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Photo\-::set\-Latitude (
+\begin{DoxyParamCaption}
+\item[{double}]{la}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classPhoto_a2a33bfd34dc606f17f4cb4ff1505afbe}
+
+
+set\-Latitude 
+
+
+\begin{DoxyParams}{Parameters}
+{\em la} & double sets lat to the value of la \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPhoto_a5846dcbc510174ed2db5cbbe99367a7f}{\index{Photo@{Photo}!set\-Longitude@{set\-Longitude}}
+\index{set\-Longitude@{set\-Longitude}!Photo@{Photo}}
+\subsubsection[{set\-Longitude}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Photo\-::set\-Longitude (
+\begin{DoxyParamCaption}
+\item[{double}]{lo}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classPhoto_a5846dcbc510174ed2db5cbbe99367a7f}
+
+
+set\-Longitude 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lo} & double sets lon to the value of lo \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+photo.\-h\end{DoxyCompactItemize}

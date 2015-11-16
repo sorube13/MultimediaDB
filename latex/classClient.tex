@@ -1,0 +1,40 @@
+\hypertarget{classClient}{\section{Client Class Reference}
+\label{classClient}\index{Client@{Client}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classClient_a086443723482695b4484e36e9c091cd8}{Client} (const string \&host, int port)
+\item 
+\hypertarget{classClient_a3d765005b9531876cfb18c34c9aab966}{int {\bfseries get\-Status} () const }\label{classClient_a3d765005b9531876cfb18c34c9aab966}
+
+\item 
+int \hyperlink{classClient_a0f046c9aa8ccd1185b3e473f9677e3d3}{send} (const string \&request, string \&response)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classClient_a086443723482695b4484e36e9c091cd8}{\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\subsubsection[{Client}]{\setlength{\rightskip}{0pt plus 5cm}Client\-::\-Client (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{host, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}}\label{classClient_a086443723482695b4484e36e9c091cd8}
+Initialise la connexion. Renvoie une valeur negative en cas d'erreur. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classClient_a0f046c9aa8ccd1185b3e473f9677e3d3}{\index{Client@{Client}!send@{send}}
+\index{send@{send}!Client@{Client}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}int Client\-::send (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{request, }
+\item[{string \&}]{response}
+\end{DoxyParamCaption}
+)}}\label{classClient_a0f046c9aa8ccd1185b3e473f9677e3d3}
+Envoie une requete au server et retourne sa reponse. Renvoie une valeur negative en cas d'erreur. Noter que la methode bloque si le serveur ne repond pas. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+client.\-cpp\end{DoxyCompactItemize}

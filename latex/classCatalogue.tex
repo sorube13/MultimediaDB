@@ -1,0 +1,389 @@
+\hypertarget{classCatalogue}{\section{Catalogue Class Reference}
+\label{classCatalogue}\index{Catalogue@{Catalogue}}
+}
+
+
+The \hyperlink{classCatalogue}{Catalogue} class Class containing a catalogue of multimedia and of groups. params\-: multimedia\-: map with a string as key and a \hyperlink{classBase}{Base} object groups\-: map with a string as key and a \hyperlink{classGroup}{Group} object methods\-: \hyperlink{classCatalogue_aba54aa202119c2184dc18e5278f3ae59}{create\-Photo(string n, string pathname, double lat, double lon)} \hyperlink{classCatalogue_a59e7c173b7b7b889bb531a9b1048119e}{create\-Video(string n, string pathname, int duree)} \hyperlink{classCatalogue_aeea731bce1425a52589a46f80af016c5}{create\-Film(string n, string pathname, int duree, unsigned int $\ast$tab, unsigned int num)} \hyperlink{classCatalogue_a9e834d56a00f43b03f598a5459966d00}{create\-Group(string n)} \hyperlink{classCatalogue_a88a9f6dcfac06d9a1eed7331ab3b1f40}{supprimer\-Multimedia(string p)} \hyperlink{classCatalogue_a1839ba57f687e559fcf0251a6841624b}{supprimer\-Group(string p)} \hyperlink{classCatalogue_a07fb093b33ce5fc95af3ea8874aeef97}{rechercher\-Multimedia(string p, ostream \&s)} \hyperlink{classCatalogue_ae033231c07cc7f5fd751a4c8d25ab8e5}{rechercher\-Group(string p, ostream \&s)} \hyperlink{classCatalogue_acb117d10f869d108f142cf38811f7022}{jouer(string p)} \hyperlink{classCatalogue_a47134c107bbda909706188dc759bc076}{save(const string \& file\-Name)} \hyperlink{classCatalogue_a9bba7adb9d7455f04b9cfc839c8ebd93}{load(const string \& file\-Name)}  
+
+
+
+
+{\ttfamily \#include $<$catalogue.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCatalogue_a406ca1384645f90d84076fa8b3f4b3f2}{Catalogue} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classCatalogue}{Catalogue} Constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_aba54aa202119c2184dc18e5278f3ae59}{create\-Photo} (string n, string pathname, double lat, double lon)
+\begin{DoxyCompactList}\small\item\em create\-Photo \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_a59e7c173b7b7b889bb531a9b1048119e}{create\-Video} (string n, string pathname, int duree)
+\begin{DoxyCompactList}\small\item\em create\-Video \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_aeea731bce1425a52589a46f80af016c5}{create\-Film} (string n, string pathname, int duree, unsigned int $\ast$tab, unsigned int num)
+\begin{DoxyCompactList}\small\item\em create\-Film \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_a9e834d56a00f43b03f598a5459966d00}{create\-Group} (string n)
+\begin{DoxyCompactList}\small\item\em create\-Group \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_a88a9f6dcfac06d9a1eed7331ab3b1f40}{supprimer\-Multimedia} (string p)
+\begin{DoxyCompactList}\small\item\em supprimer\-Multimedia \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_a1839ba57f687e559fcf0251a6841624b}{supprimer\-Group} (string p)
+\begin{DoxyCompactList}\small\item\em supprimer\-Group \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCatalogue_a07fb093b33ce5fc95af3ea8874aeef97}{rechercher\-Multimedia} (string p, ostream \&s)
+\begin{DoxyCompactList}\small\item\em rechercher\-Multimedia \end{DoxyCompactList}\item 
+virtual string \hyperlink{classCatalogue_ae033231c07cc7f5fd751a4c8d25ab8e5}{rechercher\-Group} (string p, ostream \&s)
+\begin{DoxyCompactList}\small\item\em rechercher\-Group \end{DoxyCompactList}\item 
+virtual void \hyperlink{classCatalogue_acb117d10f869d108f142cf38811f7022}{jouer} (string p)
+\begin{DoxyCompactList}\small\item\em jouer \end{DoxyCompactList}\item 
+bool \hyperlink{classCatalogue_a47134c107bbda909706188dc759bc076}{save} (const string \&file\-Name)
+\begin{DoxyCompactList}\small\item\em save \end{DoxyCompactList}\item 
+bool \hyperlink{classCatalogue_a9bba7adb9d7455f04b9cfc839c8ebd93}{load} (const string \&file\-Name)
+\begin{DoxyCompactList}\small\item\em load \end{DoxyCompactList}\item 
+virtual \hyperlink{classCatalogue_a023fd8d70a58f76d2bbd6ef1e3ef0e9e}{$\sim$\-Catalogue} ()
+\begin{DoxyCompactList}\small\item\em $\sim$\-Catalogue Destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classCatalogue}{Catalogue} class Class containing a catalogue of multimedia and of groups. params\-: multimedia\-: map with a string as key and a \hyperlink{classBase}{Base} object groups\-: map with a string as key and a \hyperlink{classGroup}{Group} object methods\-: \hyperlink{classCatalogue_aba54aa202119c2184dc18e5278f3ae59}{create\-Photo(string n, string pathname, double lat, double lon)} \hyperlink{classCatalogue_a59e7c173b7b7b889bb531a9b1048119e}{create\-Video(string n, string pathname, int duree)} \hyperlink{classCatalogue_aeea731bce1425a52589a46f80af016c5}{create\-Film(string n, string pathname, int duree, unsigned int $\ast$tab, unsigned int num)} \hyperlink{classCatalogue_a9e834d56a00f43b03f598a5459966d00}{create\-Group(string n)} \hyperlink{classCatalogue_a88a9f6dcfac06d9a1eed7331ab3b1f40}{supprimer\-Multimedia(string p)} \hyperlink{classCatalogue_a1839ba57f687e559fcf0251a6841624b}{supprimer\-Group(string p)} \hyperlink{classCatalogue_a07fb093b33ce5fc95af3ea8874aeef97}{rechercher\-Multimedia(string p, ostream \&s)} \hyperlink{classCatalogue_ae033231c07cc7f5fd751a4c8d25ab8e5}{rechercher\-Group(string p, ostream \&s)} \hyperlink{classCatalogue_acb117d10f869d108f142cf38811f7022}{jouer(string p)} \hyperlink{classCatalogue_a47134c107bbda909706188dc759bc076}{save(const string \& file\-Name)} \hyperlink{classCatalogue_a9bba7adb9d7455f04b9cfc839c8ebd93}{load(const string \& file\-Name)} 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classCatalogue_a406ca1384645f90d84076fa8b3f4b3f2}{\index{Catalogue@{Catalogue}!Catalogue@{Catalogue}}
+\index{Catalogue@{Catalogue}!Catalogue@{Catalogue}}
+\subsubsection[{Catalogue}]{\setlength{\rightskip}{0pt plus 5cm}Catalogue\-::\-Catalogue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classCatalogue_a406ca1384645f90d84076fa8b3f4b3f2}
+
+
+\hyperlink{classCatalogue}{Catalogue} Constructor. 
+
+\hyperlink{classCatalogue_a406ca1384645f90d84076fa8b3f4b3f2}{Catalogue\-::\-Catalogue}. \hypertarget{classCatalogue_a023fd8d70a58f76d2bbd6ef1e3ef0e9e}{\index{Catalogue@{Catalogue}!$\sim$\-Catalogue@{$\sim$\-Catalogue}}
+\index{$\sim$\-Catalogue@{$\sim$\-Catalogue}!Catalogue@{Catalogue}}
+\subsubsection[{$\sim$\-Catalogue}]{\setlength{\rightskip}{0pt plus 5cm}Catalogue\-::$\sim$\-Catalogue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_a023fd8d70a58f76d2bbd6ef1e3ef0e9e}
+
+
+$\sim$\-Catalogue Destructor 
+
+\hyperlink{classCatalogue_a023fd8d70a58f76d2bbd6ef1e3ef0e9e}{Catalogue\-::$\sim$\-Catalogue}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classCatalogue_aeea731bce1425a52589a46f80af016c5}{\index{Catalogue@{Catalogue}!create\-Film@{create\-Film}}
+\index{create\-Film@{create\-Film}!Catalogue@{Catalogue}}
+\subsubsection[{create\-Film}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::create\-Film (
+\begin{DoxyParamCaption}
+\item[{string}]{n, }
+\item[{string}]{pathname, }
+\item[{int}]{duree, }
+\item[{unsigned int $\ast$}]{tab, }
+\item[{unsigned int}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_aeea731bce1425a52589a46f80af016c5}
+
+
+create\-Film 
+
+\hyperlink{classCatalogue_aeea731bce1425a52589a46f80af016c5}{Catalogue\-::create\-Film}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & string \\
+\hline
+{\em pathname} & string \\
+\hline
+{\em duree} & int \\
+\hline
+{\em tab} & unsigned int \\
+\hline
+{\em num} & unsigned int Creates a film with the parameters given\\
+\hline
+{\em n} & \\
+\hline
+{\em pathname} & \\
+\hline
+{\em duree} & \\
+\hline
+{\em tab} & \\
+\hline
+{\em num} & Creates a new film with smart pointers Checks if there are other objects with the same name and shows error message Checks if the durees is zero or less and shows error message Checks for invalid characters \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCatalogue_a9e834d56a00f43b03f598a5459966d00}{\index{Catalogue@{Catalogue}!create\-Group@{create\-Group}}
+\index{create\-Group@{create\-Group}!Catalogue@{Catalogue}}
+\subsubsection[{create\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::create\-Group (
+\begin{DoxyParamCaption}
+\item[{string}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_a9e834d56a00f43b03f598a5459966d00}
+
+
+create\-Group 
+
+\hyperlink{classCatalogue_a9e834d56a00f43b03f598a5459966d00}{Catalogue\-::create\-Group}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & string Creates a group with the parameters given\\
+\hline
+{\em n} & Creates a new group with smart pointers Checks if there are other objects with the same name and shows error message Checks for invalid characters \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCatalogue_aba54aa202119c2184dc18e5278f3ae59}{\index{Catalogue@{Catalogue}!create\-Photo@{create\-Photo}}
+\index{create\-Photo@{create\-Photo}!Catalogue@{Catalogue}}
+\subsubsection[{create\-Photo}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::create\-Photo (
+\begin{DoxyParamCaption}
+\item[{string}]{n, }
+\item[{string}]{pathname, }
+\item[{double}]{lat, }
+\item[{double}]{lon}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_aba54aa202119c2184dc18e5278f3ae59}
+
+
+create\-Photo 
+
+\hyperlink{classCatalogue_aba54aa202119c2184dc18e5278f3ae59}{Catalogue\-::create\-Photo}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & string \\
+\hline
+{\em pathname} & string \\
+\hline
+{\em lat} & double \\
+\hline
+{\em lon} & double Creates a new photo with the attributes given\\
+\hline
+{\em n} & \\
+\hline
+{\em pathname} & \\
+\hline
+{\em lat} & \\
+\hline
+{\em lon} & Creates a new photo with smart pointers Checks if there are other objects with the same name and shows error message Checks for invalid characters \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCatalogue_a59e7c173b7b7b889bb531a9b1048119e}{\index{Catalogue@{Catalogue}!create\-Video@{create\-Video}}
+\index{create\-Video@{create\-Video}!Catalogue@{Catalogue}}
+\subsubsection[{create\-Video}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::create\-Video (
+\begin{DoxyParamCaption}
+\item[{string}]{n, }
+\item[{string}]{pathname, }
+\item[{int}]{duree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_a59e7c173b7b7b889bb531a9b1048119e}
+
+
+create\-Video 
+
+\hyperlink{classCatalogue_a59e7c173b7b7b889bb531a9b1048119e}{Catalogue\-::create\-Video}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & string \\
+\hline
+{\em pathname} & string \\
+\hline
+{\em duree} & int creates a video with the attributes given\\
+\hline
+{\em n} & \\
+\hline
+{\em pathname} & \\
+\hline
+{\em duree} & Creates a new video with smart pointers Checks if there are other objects with the same name and shows error message Checks for invalid characters \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCatalogue_acb117d10f869d108f142cf38811f7022}{\index{Catalogue@{Catalogue}!jouer@{jouer}}
+\index{jouer@{jouer}!Catalogue@{Catalogue}}
+\subsubsection[{jouer}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::jouer (
+\begin{DoxyParamCaption}
+\item[{string}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_acb117d10f869d108f142cf38811f7022}
+
+
+jouer 
+
+\hyperlink{classCatalogue_acb117d10f869d108f142cf38811f7022}{Catalogue\-::jouer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & string opens object named p with default program\\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCatalogue_a9bba7adb9d7455f04b9cfc839c8ebd93}{\index{Catalogue@{Catalogue}!load@{load}}
+\index{load@{load}!Catalogue@{Catalogue}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool Catalogue\-::load (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classCatalogue_a9bba7adb9d7455f04b9cfc839c8ebd93}
+
+
+load 
+
+\hyperlink{classCatalogue_a9bba7adb9d7455f04b9cfc839c8ebd93}{Catalogue\-::load}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (true if completed succesfully and false otherwise) Loads the content from the path file\-Name to the catalogue, creating objects of their type
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file loaded successfuly Error message if file not available 
+\end{DoxyReturn}
+\hypertarget{classCatalogue_ae033231c07cc7f5fd751a4c8d25ab8e5}{\index{Catalogue@{Catalogue}!rechercher\-Group@{rechercher\-Group}}
+\index{rechercher\-Group@{rechercher\-Group}!Catalogue@{Catalogue}}
+\subsubsection[{rechercher\-Group}]{\setlength{\rightskip}{0pt plus 5cm}string Catalogue\-::rechercher\-Group (
+\begin{DoxyParamCaption}
+\item[{string}]{p, }
+\item[{ostream \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_ae033231c07cc7f5fd751a4c8d25ab8e5}
+
+
+rechercher\-Group 
+
+\hyperlink{classCatalogue_ae033231c07cc7f5fd751a4c8d25ab8e5}{Catalogue\-::rechercher\-Group}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \-: string \\
+\hline
+{\em s} & ostream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string with group (named p) attributes prints in s the string
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+attributes of \hyperlink{classGroup}{Group}\mbox{[}p\mbox{]} Shows error if group not found 
+\end{DoxyReturn}
+\hypertarget{classCatalogue_a07fb093b33ce5fc95af3ea8874aeef97}{\index{Catalogue@{Catalogue}!rechercher\-Multimedia@{rechercher\-Multimedia}}
+\index{rechercher\-Multimedia@{rechercher\-Multimedia}!Catalogue@{Catalogue}}
+\subsubsection[{rechercher\-Multimedia}]{\setlength{\rightskip}{0pt plus 5cm}string Catalogue\-::rechercher\-Multimedia (
+\begin{DoxyParamCaption}
+\item[{string}]{p, }
+\item[{ostream \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_a07fb093b33ce5fc95af3ea8874aeef97}
+
+
+rechercher\-Multimedia 
+
+\hyperlink{classCatalogue_a07fb093b33ce5fc95af3ea8874aeef97}{Catalogue\-::rechercher\-Multimedia}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & string \\
+\hline
+{\em s} & ostream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string with multimedia (named p) attributes prints in s the return string
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \\
+\hline
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+attributes of multimedia\mbox{[}p\mbox{]} Shows error if multimedia not found 
+\end{DoxyReturn}
+\hypertarget{classCatalogue_a47134c107bbda909706188dc759bc076}{\index{Catalogue@{Catalogue}!save@{save}}
+\index{save@{save}!Catalogue@{Catalogue}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}bool Catalogue\-::save (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classCatalogue_a47134c107bbda909706188dc759bc076}
+
+
+save 
+
+\hyperlink{classCatalogue_a47134c107bbda909706188dc759bc076}{Catalogue\-::save}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (true if completed succesfully and false otherwise) Saves the object into the file with pathname p
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if file saved successfully Otherwise return false and error message 
+\end{DoxyReturn}
+\hypertarget{classCatalogue_a1839ba57f687e559fcf0251a6841624b}{\index{Catalogue@{Catalogue}!supprimer\-Group@{supprimer\-Group}}
+\index{supprimer\-Group@{supprimer\-Group}!Catalogue@{Catalogue}}
+\subsubsection[{supprimer\-Group}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::supprimer\-Group (
+\begin{DoxyParamCaption}
+\item[{string}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_a1839ba57f687e559fcf0251a6841624b}
+
+
+supprimer\-Group 
+
+\hyperlink{classCatalogue_a1839ba57f687e559fcf0251a6841624b}{Catalogue\-::supprimer\-Group}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & string Deletes group with name p from catalogue\\
+\hline
+{\em p} & Shows error if \hyperlink{classGroup}{Group} not found \\
+\hline
+\end{DoxyParams}
+\hypertarget{classCatalogue_a88a9f6dcfac06d9a1eed7331ab3b1f40}{\index{Catalogue@{Catalogue}!supprimer\-Multimedia@{supprimer\-Multimedia}}
+\index{supprimer\-Multimedia@{supprimer\-Multimedia}!Catalogue@{Catalogue}}
+\subsubsection[{supprimer\-Multimedia}]{\setlength{\rightskip}{0pt plus 5cm}void Catalogue\-::supprimer\-Multimedia (
+\begin{DoxyParamCaption}
+\item[{string}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classCatalogue_a88a9f6dcfac06d9a1eed7331ab3b1f40}
+
+
+supprimer\-Multimedia 
+
+\hyperlink{classCatalogue_a88a9f6dcfac06d9a1eed7331ab3b1f40}{Catalogue\-::supprimer\-Multimedia}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & string Deletes multimedia with name p from catalogue and from groups containing them\\
+\hline
+{\em p} & Shows error if Multimedia not found \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+catalogue.\-h\item 
+catalogue.\-cpp\end{DoxyCompactItemize}
