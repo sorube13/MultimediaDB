@@ -61,11 +61,16 @@ public:
      * @return film attributes
      */
     virtual string affichage(ostream & s) override {
-        s << "Film\n"<< getName() << " "<< getPathname() << " "<< getDuree() << " " << getNombreChapitres()<< endl;
+        string msg;
+        //msg = "Film!!!";
+        msg = "Film\n" + getName() + " " + getPathname() + " " + to_string(getDuree()) + " " +to_string(getNombreChapitres());
+        //s << "Film\n"<< getName() << " "<< getPathname() << " "<< getDuree() << " " << getNombreChapitres()<< endl;
         for(unsigned int i = 0; i< count; i++){
-            s <<  durees[i]<< endl;
+            msg = msg +  "\n" + to_string(durees[i]);
+            //s <<  durees[i]<< endl;
         }
-        return "hola";
+        s << msg << endl;
+        return msg;
     }
 
 

@@ -152,16 +152,25 @@ int main() {
         c->rechercherMultimedia("disney.jpg", cout);
     }
 
-    if(1){
+    if(0){
         shared_ptr<Catalogue> c(new Catalogue());
         unsigned int d [] = { 5 , 2 , 3 };
         unsigned int num = 3;
         c->createFilm("film", "/sorube/film", 100, d,num);
+        c->rechercherMultimedia("film", cout);
         if(c->save("/home/sorube/Documents/INF224/hello.html"))
             cout << "saved film to file" << endl;
         c->supprimerMultimedia("film");
         if(c->load("/home/sorube/Documents/INF224/hello.html"))
             cout << "loaded film" <<endl;
+        c->rechercherMultimedia("film", cout);
+    }
+
+    if(1){
+        shared_ptr<Catalogue> c(new Catalogue());
+        unsigned int d [] = { 5 , 2 , 3 };
+        unsigned int num = 3;
+        c->createFilm("film", "/sorube/film", 100, d,num);
         c->rechercherMultimedia("film", cout);
     }
 

@@ -47,16 +47,23 @@ public:
 
     stringstream r;
     string method, args;
-    stringstream otro;
-    string o;
+    stringstream recherche;
+    string type;
 
     r<<request;
     r >> method >> args;
 
     if(method == "rechercher" || method =="1"){
-        otro << c->rechercherMultimedia(args, cout);
-        getline(otro, o);
-        getline(otro, response);
+        recherche << c->rechercherMultimedia(args, cout);
+        cout << "recherche has: " << recherche.str()<< endl;
+        getline(recherche, type);
+        getline(recherche, response);
+        string a;
+        while(getline(recherche, a)){
+            cout << recherche.str() << endl;
+            //getLine(recherche, a);
+            response = response + " " + a;
+         }
 
     }else if(method=="jouer" || method =="2"){
         response = "Multimedia being played in server";
