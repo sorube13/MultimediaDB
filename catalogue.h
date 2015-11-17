@@ -46,6 +46,7 @@ public:
      * @param lat: double
      * @param lon: double
      * Creates a new photo with the attributes given
+     * Must not repeat already existing n, and n must have valid characters
      */
     virtual void createPhoto(string n, string pathname, double lat, double lon);
     /**
@@ -54,6 +55,7 @@ public:
      * @param pathname: string
      * @param duree: int
      * creates a video with the attributes given
+     * Must not repeat already existing n, and n must have valid characters
      */
     virtual void createVideo(string n, string pathname, int duree);
     /**
@@ -64,12 +66,14 @@ public:
      * @param tab: unsigned int
      * @param num: unsigned int
      * Creates a film with the parameters given
+     * Must not repeat already existing n, and n must have valid characters
      */
     virtual void createFilm(string n, string pathname, int duree, unsigned int *tab, unsigned int num);
     /**
      * @brief createGroup
      * @param n: string
      * Creates a group with the parameters given
+     * Must not repeat already existing n, and n must have valid characters
      */
     virtual void createGroup(string n);
     /**

@@ -13,9 +13,7 @@
 
 using namespace std;
 
-/**
- * @brief Catalogue::Catalogue
- */
+
 Catalogue::Catalogue(){}
 
 
@@ -37,16 +35,7 @@ bool HasSpecialCharacters(const char *str)
     return str[strspn(str, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-:/")] != 0;
 }
 
-/**
- * @brief Catalogue::createPhoto
- * @param n
- * @param pathname
- * @param lat
- * @param lon
- * Creates a new photo with smart pointers
- * Checks if there are other objects with the same name and shows error message
- * Checks for invalid characters
- */
+
 void Catalogue::createPhoto(string n, string pathname, double lat, double lon){
     try{
         if(multimedia[n]){
@@ -62,15 +51,7 @@ void Catalogue::createPhoto(string n, string pathname, double lat, double lon){
     }
 }
 
-/**
- * @brief Catalogue::createVideo
- * @param n
- * @param pathname
- * @param duree
- * Creates a new video with smart pointers
- * Checks if there are other objects with the same name and shows error message
- * Checks for invalid characters
- */
+
 void Catalogue::createVideo(string n, string pathname, int duree){
     try{
         if(multimedia[n]){
@@ -86,18 +67,7 @@ void Catalogue::createVideo(string n, string pathname, int duree){
     }
 }
 
-/**
- * @brief Catalogue::createFilm
- * @param n
- * @param pathname
- * @param duree
- * @param tab
- * @param num
- * Creates a new film with smart pointers
- * Checks if there are other objects with the same name and shows error message
- * Checks if the durees is zero or less and shows error message
- * Checks for invalid characters
- */
+
 void Catalogue::createFilm(string n, string pathname, int duree, unsigned int *tab, unsigned int num){
     try{
         if(multimedia[n]){
@@ -117,13 +87,6 @@ void Catalogue::createFilm(string n, string pathname, int duree, unsigned int *t
     }
 }
 
-/**
- * @brief Catalogue::createGroup
- * @param n
- * Creates a new group with smart pointers
- * Checks if there are other objects with the same name and shows error message
- * Checks for invalid characters
- */
 
 void Catalogue::createGroup(string n){
     try{
@@ -140,11 +103,7 @@ void Catalogue::createGroup(string n){
     }
 }
 
-/**
- * @brief Catalogue::supprimerMultimedia
- * @param p
- * Shows error if Multimedia not found
- */
+
 void Catalogue::supprimerMultimedia(string p){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
@@ -158,11 +117,7 @@ void Catalogue::supprimerMultimedia(string p){
     }
 }
 
-/**
- * @brief Catalogue::supprimerGroup
- * @param p
- * Shows error if Group not found
- */
+
 void Catalogue::supprimerGroup(string p){
     if(groups.find(p) != groups.end()){
         groups.erase(p);
@@ -172,13 +127,7 @@ void Catalogue::supprimerGroup(string p){
     }
 }
 
-/**
- * @brief Catalogue::rechercherMultimedia
- * @param p
- * @param s
- * @return attributes of multimedia[p]
- * Shows error if multimedia not found
- */
+
 string Catalogue::rechercherMultimedia(string p, ostream & s){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
@@ -191,13 +140,7 @@ string Catalogue::rechercherMultimedia(string p, ostream & s){
     }
 }
 
-/**
- * @brief Catalogue::rechercherGroup
- * @param p
- * @param s
- * @return attributes of Group[p]
- * Shows error if group not found
- */
+
 string Catalogue::rechercherGroup(string p, ostream &s){
     if(groups.find(p) != groups.end()){
         map<string, shared_ptr<Group> >::const_iterator m = this->groups.find(p);
@@ -210,10 +153,7 @@ string Catalogue::rechercherGroup(string p, ostream &s){
     }
 }
 
-/**
- * @brief Catalogue::jouer
- * @param p
- */
+
 void Catalogue::jouer(string p){
     if(multimedia.find(p) != multimedia.end()){
         map<string, shared_ptr<Base> >::const_iterator m = this->multimedia.find(p);
@@ -225,12 +165,7 @@ void Catalogue::jouer(string p){
 }
 
 
-/**
- * @brief Catalogue::save
- * @param fileName
- * @return true if file saved successfully
- * Otherwise return false and error message
- */
+
 bool Catalogue::save(const string &fileName) {
     ofstream f;
     f.open(fileName);
@@ -245,12 +180,7 @@ bool Catalogue::save(const string &fileName) {
     return true;
 }
 
-/**
- * @brief Catalogue::load
- * @param fileName
- * @return true if file loaded successfuly
- * Error message if file not available
- */
+
 bool Catalogue::load(const string &fileName){
     ifstream f;
     string type;
@@ -306,9 +236,7 @@ bool Catalogue::load(const string &fileName){
     return true;
 }
 
-/**
- * @brief Catalogue::~Catalogue
- */
+
 Catalogue::~Catalogue(){
     cout << "Catalogue deleted" << endl;
 }

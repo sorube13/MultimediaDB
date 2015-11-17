@@ -1,0 +1,29 @@
+
+JFLAGS = -g
+JC = javac
+PROG = SetTopBox
+
+
+
+.SUFFIXES: .java .class
+.java.class:
+		$(JC) $(JFLAGS) ./inf224/orube/*.java
+
+SOURCES = \
+		./inf224/orube/SetTopBox.java \
+		./inf224/orube/Client.java 
+		
+default: classes
+	
+all: classes
+
+classes: $(SOURCES:.java=.class)
+
+clean:
+	-@$(RM) inf224/orube/*.class 1>/dev/null 2>&1
+
+run: all
+		java inf224.orube.${PROG}
+
+tar:
+	tar cvf inf224/orube/${PROG}.tar.gz ${SOURCES}

@@ -1,11 +1,11 @@
 
-JFLAGS = -g
+JFLAGS = -cp
 JC = javac
 PROG = SetTopBox
 
 .SUFFIXES: .java .class
 .java.class:
-		$(JC) $(JFLAGS) *.java
+		$(JC) $(JFLAGS) inf224/orube *.java
 
 CLASSES = \
 		SetTopBox.java \
@@ -21,4 +21,4 @@ clean:
 		$(RM) *.class
 
 run: all
-		java ${PROG}
+		java inf224.orube.${PROG}
