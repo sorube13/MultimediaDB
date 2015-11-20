@@ -1,6 +1,8 @@
 package inf224.orube;
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+
 import java.awt.event.*;
 import java.awt.*;
 import java.io.IOException;
@@ -58,6 +60,7 @@ public class SetTopBox extends JFrame
 		this.add(p, BorderLayout.SOUTH);
 		//Text Area and Scroll
 		text = new JTextArea(10, 50);
+		text.append(">Introduce name of file: \n");
 		jp = new JScrollPane(text);
 		add(jp, BorderLayout.CENTER);
 		
@@ -102,9 +105,33 @@ public class SetTopBox extends JFrame
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==b1){
-			text.append(" \nMultimedia:");
+			try {
+				int nLines = text.getLineCount();
+				int start = text.getLineStartOffset(nLines-1);
+				int end = text.getLineEndOffset(nLines -1);
+				String m = text.getText(start, (end - start));
+				String result = c.send("1 " + m);
+				System.out.println("Sending: " + m);
+				text.append(" \nMultimedia:\n" + result + "\n");
+				text.append(">Introduce name of file: \n");
+			} catch (BadLocationException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}else if(e.getSource()==b2){
-			text.append(" \nPlaying Multimedia on server");
+			try {
+				int nLines = text.getLineCount();
+				int start = text.getLineStartOffset(nLines-1);
+				int end = text.getLineEndOffset(nLines -1);
+				String m = text.getText(start, (end - start));
+				c.send("2 " + m);
+				System.out.println("Sending: " + m);
+				text.append(" \nMultimedia being played on server\n" );
+				text.append(">Introduce name of file: \n");
+			} catch (BadLocationException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}else if(e.getSource()==b3){
 			System.exit(0);
 		}
@@ -126,13 +153,36 @@ public class SetTopBox extends JFrame
 	    public void actionPerformed(ActionEvent e)
 	    {
 	    	if(e.getActionCommand()=="Rechercher Multimedia"){
-	    		String m = text.getText();
-	    		String result = c.send("1 " + m);
-	    		c.send("");
-				text.append(" \nMultimedia:\n" + result);
+	    		try {
+					int nLines = text.getLineCount();
+					int start = text.getLineStartOffset(nLines-1);
+					int end = text.getLineEndOffset(nLines -1);
+					String m = text.getText(start, (end - start));
+					String result = c.send("1 " + m);
+					System.out.println("Sending: " + m);
+					text.append(" \nMultimedia:\n" + result + "\n");
+					text.append(">Introduce name of file: \n");
+				} catch (BadLocationException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+	    		
+				
 				
 			}else if(e.getActionCommand()=="Jouer Multimedia"){
-				text.append(" \nPlaying multimedia on server");
+				try {
+					int nLines = text.getLineCount();
+					int start = text.getLineStartOffset(nLines-1);
+					int end = text.getLineEndOffset(nLines -1);
+					String m = text.getText(start, (end - start));
+					c.send("2 " + m);
+					System.out.println("Sending: " + m);
+					text.append(" \nMultimedia being played on server\n" );
+					text.append(">Introduce name of file: \n");
+				} catch (BadLocationException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}else if(e.getActionCommand()=="Exit"){
 				System.exit(0);
 			}

@@ -51,13 +51,10 @@ public:
     ///  will receive the answer for the method rechercherMultimedia
     if(method == "rechercher" || method =="1"){
         recherche << c->rechercherMultimedia(args, cout);
-        cout << "recherche has: " << recherche.str()<< endl;
         getline(recherche, type);
         getline(recherche, response);
         string a;
         while(getline(recherche, a)){
-            cout << recherche.str() << endl;
-            //getLine(recherche, a);
             response = response + " " + a;
          }
     /// If the petition has "jouer" or "2" followed by a multimedia object name, the server will
